@@ -195,12 +195,13 @@ class JQ6500_Serial : public SoftwareSerial
     /** Set the equalizer to one of 6 preset modes.
      * 
      * @param equalizerMode One of the following, 
-     *   MP3_EQ_NORMAL
-     *   MP3_EQ_POP        
-     *   MP3_EQ_ROCK       
-     *   MP3_EQ_JAZZ       
-     *   MP3_EQ_CLASSIC    
-     *   MP3_EQ_BASS       
+     * 
+     *  *  MP3_EQ_NORMAL
+     *  *  MP3_EQ_POP        
+     *  *  MP3_EQ_ROCK       
+     *  *  MP3_EQ_JAZZ       
+     *  *  MP3_EQ_CLASSIC    
+     *  *  MP3_EQ_BASS       
      * 
      */
     
@@ -209,11 +210,12 @@ class JQ6500_Serial : public SoftwareSerial
     /** Set the looping mode.
      * 
      * @param loopMode One of the following,
-     *   MP3_LOOP_ALL       - Loop through all files.
-     *   MP3_LOOP_FOLDER    - Loop through all files in the same folder (SD Card only)
-     *   MP3_LOOP_ONE       - Loop one file.
-     *   MP3_LOOP_RAM       - Loop one file (uncertain how it is different to the previous!)
-     *   MP3_LOOP_NONE      - No loop, just play one file and then stop. (aka MP3_LOOP_ONE_STOP)
+     * 
+     *  *  MP3_LOOP_ALL       - Loop through all files.
+     *  *  MP3_LOOP_FOLDER    - Loop through all files in the same folder (SD Card only)
+     *  *  MP3_LOOP_ONE       - Loop one file.
+     *  *  MP3_LOOP_RAM       - Loop one file (uncertain how it is different to the previous!)
+     *  *  MP3_LOOP_NONE      - No loop, just play one file and then stop. (aka MP3_LOOP_ONE_STOP)
      */
     
     void setLoopMode(byte loopMode);
@@ -277,12 +279,13 @@ class JQ6500_Serial : public SoftwareSerial
     /** Get the equalizer mode.
      * 
      * @return One of the following, 
-     *   MP3_EQ_NORMAL
-     *   MP3_EQ_POP        
-     *   MP3_EQ_ROCK       
-     *   MP3_EQ_JAZZ       
-     *   MP3_EQ_CLASSIC    
-     *   MP3_EQ_BASS      
+     * 
+     *  *  MP3_EQ_NORMAL
+     *  *  MP3_EQ_POP        
+     *  *  MP3_EQ_ROCK       
+     *  *  MP3_EQ_JAZZ       
+     *  *  MP3_EQ_CLASSIC    
+     *  *  MP3_EQ_BASS      
      */
     
     byte getEqualizer();
@@ -290,11 +293,12 @@ class JQ6500_Serial : public SoftwareSerial
     /** Get loop mode.
      * 
      * @return One of the following,
-     *   MP3_LOOP_ALL       - Loop through all files.
-     *   MP3_LOOP_FOLDER    - Loop through all files in the same folder (SD Card only)
-     *   MP3_LOOP_ONE       - Loop one file.
-     *   MP3_LOOP_RAM       - Loop one file (uncertain how it is different to the previous!)
-     *   MP3_LOOP_NONE      - No loop, just play one file and then stop. (aka MP3_LOOP_ONE_STOP)
+     * 
+     *  *  MP3_LOOP_ALL       - Loop through all files.
+     *  *  MP3_LOOP_FOLDER    - Loop through all files in the same folder (SD Card only)
+     *  *  MP3_LOOP_ONE       - Loop one file.
+     *  *  MP3_LOOP_RAM       - Loop one file (uncertain how it is different to the previous!)
+     *  *  MP3_LOOP_NONE      - No loop, just play one file and then stop. (aka MP3_LOOP_ONE_STOP)
      */
     
     byte getLoopMode();
