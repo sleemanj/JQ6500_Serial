@@ -6,6 +6,8 @@ Simple to use Arduino library to interface to JQ6500 (JQ6500-28P, JQ6500-16P) Mp
 For complete documentation about the JQ6500 Mp3 Player Module, see: 
    http://sparks.gogo.co.nz/jq6500/index.html
    
+For a library methods reference see:
+   http://sparks.gogo.co.nz/jq6500/doxygen/index.html
 
 Download, Install and Example
 -----------------------------
