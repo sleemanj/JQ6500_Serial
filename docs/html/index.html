@@ -101,12 +101,62 @@ $(document).ready(function(){initNavTree('index.html','');});
 <div class="title">JQ6500 MP3 Player Arduino Library Documentation</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"></div></div><!-- contents -->
+<div class="textblock"><p>Simple to use Arduino library to interface to JQ6500 (JQ6500-28P, JQ6500-16P) Mp3 Player Modules</p>
+<p>For complete documentation about the JQ6500 Mp3 Player Module, see: <a href="http://sparks.gogo.co.nz/jq6500/index.html">http://sparks.gogo.co.nz/jq6500/index.html</a></p>
+<h2>Download, Install and Example </h2>
+<ul>
+<li>Download: <a href="http://sparks.gogo.co.nz/JQ6500_Serial.zip">http://sparks.gogo.co.nz/JQ6500_Serial.zip</a></li>
+<li>Open the Arduino IDE (1.0.5)</li>
+<li>Select the menu item Sketch &gt; Import Library &gt; Add Library</li>
+<li>Choose to install the JQ6500_Serial.zip file you downloaded</li>
+<li>Now you can choose File &gt; Examples &gt; <a class="el" href="class_j_q6500___serial.html">JQ6500_Serial</a> &gt; HelloWorld</li>
+</ul>
+<h2>Connecting To Your Arduino </h2>
+<div class="image">
+<img src="http://sparks.gogo.co.nz/assets/_site_/images/jq6500/kq6500-16p.jpeg"  align="right" title="JQ6500-16p" alt="Pinout image of JQ6500-16p MP3 Player Module For Arduino"/>
+</div>
+ <div class="image">
+<img src="http://sparks.gogo.co.nz/assets/_site_/images/jq6500/jq6500-28.jpeg"  align="right" title="JQ6500-28p" alt="Pinout image of JQ6500-28p MP3 Player Module For Arduino"/>
+</div>
+<p>There are two varients of the JQ6500 module as shown.</p>
+<p>To use this library with a <em>5v Arduino</em>, connect as follows.</p>
+<table class="doxtable">
+<tr>
+<th>JQ6500 Module </th><th>Arduino  </th></tr>
+<tr>
+<td>RX </td><td>through a 1K Resistor then to pin 9 </td></tr>
+<tr>
+<td>TX </td><td>pin 8 </td></tr>
+<tr>
+<td>GND (any of) </td><td>GND </td></tr>
+<tr>
+<td>VCC (any of) </td><td>VCC </td></tr>
+</table>
+<p>To use this library with a <em>3v3 Arduino</em>, connect as follows...</p>
+<table class="doxtable">
+<tr>
+<th>JQ6500 Module </th><th>Arduino  </th></tr>
+<tr>
+<td>RX </td><td>pin 9 </td></tr>
+<tr>
+<td>TX </td><td>pin 8 </td></tr>
+<tr>
+<td>GND (any of) </td><td>GND </td></tr>
+<tr>
+<td>VCC (any of) </td><td>VCC </td></tr>
+</table>
+<p>You can use pins other than 9 and 8 if you wish, simply set them in your code.</p>
+<h2>Power Demands </h2>
+<p>If using the on-board speaker driver, then naturally the power demands are significant, and your USB power may not be sufficient at more 1/3rd level of volume or so, the symptom is the audo breaking up and potentially resetting when volume increases.</p>
+<p>You should use either an external power source, an external amp, or a lower volume if you experience this problem.</p>
+<h2>Usage </h2>
+<p>Open the HelloWorld example. </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Feb 25 2015 01:16:55 for JQ6500 MP3 Player Arduino Library by
+    <li class="footer">Generated on Wed Feb 25 2015 01:22:33 for JQ6500 MP3 Player Arduino Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>
