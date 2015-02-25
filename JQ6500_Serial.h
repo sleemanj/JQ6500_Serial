@@ -89,13 +89,15 @@ class JQ6500_Serial : public SoftwareSerial
      *     JQ6500_Serial mp3(8,9);
      * 
      * For a 5v Arduino:
-     *  * TX on JQ6500 connects to pin 8
-     *  * TX on JQ6500 connects to one end of a 1k resistor,
-     *      other end of resistor connects to pin 9
+     * -----------------
+     *  * TX on JQ6500 connects to D8 on the Arduino
+     *  * RX on JQ6500 connects to one end of a 1k resistor,
+     *      other end of resistor connects to D9 on the Arduino
      * 
      * For a 3v3 Arduino:
-     *  * TX on JQ6500 connects to pin 8
-     *  * TX on JQ6500 connects to pin 9
+     * -----------------
+     *  * TX on JQ6500 connects to D8 on the Arduino
+     *  * RX on JQ6500 connects to D9 on the Arduino
      * 
      * Of course, power and ground are also required, VCC on JQ6500 is 5v tolerant (but RX isn't totally, hence the resistor above).
      * 
@@ -223,8 +225,9 @@ class JQ6500_Serial : public SoftwareSerial
     /** Set the source to read mp3 data from.
      * 
      *  @param source One of the following,
-     *   MP3_SRC_BUILTIN    - Files read from the on-board flash memory
-     *   MP3_SRC_SDCARD     - Files read from the SD Card (JQ6500-28P only)
+     * 
+     *   * MP3_SRC_BUILTIN    - Files read from the on-board flash memory
+     *   * MP3_SRC_SDCARD     - Files read from the SD Card (JQ6500-28P only)
      */
     
     void setSource(byte source);        // SRC_BUILTIN or SRC_SDCARD       

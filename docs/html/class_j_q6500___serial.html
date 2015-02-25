@@ -270,13 +270,15 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>waitUntilAvailable</b>
 
 <p>Create JQ6500 object. </p>
 <p>Example, create global instance: </p><pre class="fragment">JQ6500_Serial mp3(8,9);
-</pre><p>For a 5v Arduino:</p><ul>
-<li>TX on JQ6500 connects to pin 8</li>
-<li>TX on JQ6500 connects to one end of a 1k resistor, other end of resistor connects to pin 9</li>
+</pre><h2>For a 5v Arduino: </h2>
+<ul>
+<li>TX on JQ6500 connects to D8 on the Arduino</li>
+<li>RX on JQ6500 connects to one end of a 1k resistor, other end of resistor connects to D9 on the Arduino</li>
 </ul>
-<p>For a 3v3 Arduino:</p><ul>
-<li>TX on JQ6500 connects to pin 8</li>
-<li>TX on JQ6500 connects to pin 9</li>
+<h2>For a 3v3 Arduino: </h2>
+<ul>
+<li>TX on JQ6500 connects to D8 on the Arduino</li>
+<li>RX on JQ6500 connects to D9 on the Arduino</li>
 </ul>
 <p>Of course, power and ground are also required, VCC on JQ6500 is 5v tolerant (but RX isn't totally, hence the resistor above).</p>
 <p>And then you can use in your setup(): </p><pre class="fragment">mp3.begin(9600)
@@ -807,10 +809,14 @@ mp3.reset();
 <p>Set the source to read mp3 data from. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">source</td><td>One of the following, MP3_SRC_BUILTIN - Files read from the on-board flash memory MP3_SRC_SDCARD - Files read from the SD Card (JQ6500-28P only) </td></tr>
+    <tr><td class="paramname">source</td><td>One of the following,</td></tr>
   </table>
   </dd>
 </dl>
+<ul>
+<li>MP3_SRC_BUILTIN - Files read from the on-board flash memory</li>
+<li>MP3_SRC_SDCARD - Files read from the SD Card (JQ6500-28P only) </li>
+</ul>
 
 </div>
 </div>
@@ -900,7 +906,7 @@ mp3.reset();
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_j_q6500___serial.html">JQ6500_Serial</a></li>
-    <li class="footer">Generated on Wed Feb 25 2015 01:31:37 for JQ6500 MP3 Player Arduino Library by
+    <li class="footer">Generated on Wed Feb 25 2015 14:08:34 for JQ6500 MP3 Player Arduino Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>
