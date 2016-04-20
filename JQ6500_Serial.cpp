@@ -278,7 +278,7 @@ void  JQ6500_Serial::reset()
       Serial.print(" ==> [");
 #endif
       
-      while(this->waitUntilAvailable(50))
+      while(this->waitUntilAvailable(150))
       {
         j = (char)this->read();
         
