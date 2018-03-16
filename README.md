@@ -9,6 +9,9 @@ For complete documentation about the JQ6500 Mp3 Player Module, see:
 For a library methods reference see:
    http://sparks.gogo.co.nz/jq6500/doxygen/class_j_q6500___serial.html
 
+For Linux Upload and Windows Upload Repair Tool (JQ6500-16) see:
+   https://github.com/NikolaiRadke/JQ6500-rescue-tool
+
 Download, Install and Example
 -----------------------------
 
