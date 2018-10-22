@@ -261,6 +261,8 @@ void  JQ6500_Serial_ESP32::reset()
       if(args==2) this->write(arg2);
       this->write((byte)0xEF);
       
+      if(!responseBuffer && !bufferLength) return;
+      
       
       unsigned int i = 0;
       char         j = 0;
