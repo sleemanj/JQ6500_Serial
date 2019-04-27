@@ -242,24 +242,24 @@ void  JQ6500_Serial::reset()
 #if MP3_DEBUG
       char buf[4];       
       Serial.println();
-      Serial.print("7E ");      
+      Serial.print(MP3_CMD_BEGIN, HEX); Serial.print(" ");
       itoa(2+args, buf, 16); Serial.print(buf); Serial.print(" "); memset(buf, 0, sizeof(buf));
       itoa(command, buf, 16); Serial.print(buf); Serial.print(" "); memset(buf, 0, sizeof(buf));
       if(args>=1) itoa(arg1, buf, 16); Serial.print(buf); Serial.print(" "); memset(buf, 0, sizeof(buf));
       if(args>=2) itoa(arg2, buf, 16); Serial.print(buf); Serial.print(" "); memset(buf, 0, sizeof(buf));
-      Serial.print("EF");      
+      Serial.print(MP3_CMD_END, HEX);      
 #endif
       
       // The device appears to send some sort of status information (namely "STOP" when it stops playing)
       // just discard this right before we send the command
       while(this->waitUntilAvailable(10)) this->read();
       
-      this->write((byte)0x7E);
+      this->write((byte)MP3_CMD_BEGIN);
       this->write(2+args);
       this->write(command);
       if(args>=1) this->write(arg1);
       if(args==2) this->write(arg2);
-      this->write((byte)0xEF);
+      this->write((byte)MP3_CMD_END);
       
       
       unsigned int i = 0;

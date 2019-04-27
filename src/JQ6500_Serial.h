@@ -403,6 +403,9 @@ class JQ6500_Serial : public SoftwareSerial
     
     int    waitUntilAvailable(unsigned long maxWaitTime = 1000);
     
+    static const uint8_t MP3_CMD_BEGIN = 0x7E;
+    static const uint8_t MP3_CMD_END   = 0xEF;
+    
     static const uint8_t MP3_CMD_PLAY = 0x0D;
     static const uint8_t MP3_CMD_PAUSE = 0x0E;
     static const uint8_t MP3_CMD_NEXT = 0x01;
