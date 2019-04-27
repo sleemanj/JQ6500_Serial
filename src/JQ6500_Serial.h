@@ -403,6 +403,43 @@ class JQ6500_Serial : public SoftwareSerial
     
     int    waitUntilAvailable(unsigned long maxWaitTime = 1000);
     
+    static const uint8_t MP3_CMD_PLAY = 0x0D;
+    static const uint8_t MP3_CMD_PAUSE = 0x0E;
+    static const uint8_t MP3_CMD_NEXT = 0x01;
+    static const uint8_t MP3_CMD_PREV = 0x02;
+    static const uint8_t MP3_CMD_PLAY_IDX = 0x03;
+    
+    static const uint8_t MP3_CMD_NEXT_FOLDER = 0x0F;
+    static const uint8_t MP3_CMD_PREV_FOLDER = 0x0F; // Note the same as next, the data byte indicates direction
+    
+    static const uint8_t MP3_CMD_PLAY_FILE_FOLDER = 0x12;
+    
+    static const uint8_t MP3_CMD_VOL_UP = 0x04;
+    static const uint8_t MP3_CMD_VOL_DN = 0x05;
+    static const uint8_t MP3_CMD_VOL_SET = 0x06;
+    
+    static const uint8_t MP3_CMD_EQ_SET = 0x07;
+    static const uint8_t MP3_CMD_LOOP_SET = 0x11;    
+    static const uint8_t MP3_CMD_SOURCE_SET = 0x09;
+    static const uint8_t MP3_CMD_SLEEP = 0x0A;    
+    static const uint8_t MP3_CMD_RESET = 0x0C;
+    
+    static const uint8_t MP3_CMD_STATUS = 0x42;
+    static const uint8_t MP3_CMD_VOL_GET = 0x43;
+    static const uint8_t MP3_CMD_EQ_GET = 0x44;
+    static const uint8_t MP3_CMD_LOOP_GET = 0x45;
+    static const uint8_t MP3_CMD_VER_GET = 0x46;
+    
+    static const uint8_t MP3_CMD_COUNT_SD  = 0x47;
+    static const uint8_t MP3_CMD_COUNT_MEM = 0x49;
+    static const uint8_t MP3_CMD_COUNT_FOLDERS = 0x53;
+    static const uint8_t MP3_CMD_CURRENT_FILE_IDX_SD = 0x4B;
+    static const uint8_t MP3_CMD_CURRENT_FILE_IDX_MEM = 0x4D;
+    
+    static const uint8_t MP3_CMD_CURRENT_FILE_POS_SEC = 0x50;
+    static const uint8_t MP3_CMD_CURRENT_FILE_LEN_SEC = 0x51;
+    static const uint8_t MP3_CMD_CURRENT_FILE_NAME = 0x52;
+    
 };
 
 #endif

@@ -33,7 +33,7 @@
 
 void  JQ6500_Serial::play()
 {
-  this->sendCommand(0x0D);
+  this->sendCommand(MP3_CMD_PLAY);
 }
 
 void  JQ6500_Serial::restart()
@@ -48,77 +48,77 @@ void  JQ6500_Serial::restart()
 
 void  JQ6500_Serial::pause()
 {
-  this->sendCommand(0x0E);
+  this->sendCommand(MP3_CMD_PAUSE);
 }
 
 void  JQ6500_Serial::next()
 {
-  this->sendCommand(0x01);
+  this->sendCommand(MP3_CMD_NEXT);
 }
 
 void  JQ6500_Serial::prev()
 {
-  this->sendCommand(0x02);
+  this->sendCommand(MP3_CMD_PREV);
 }
 
 void  JQ6500_Serial::playFileByIndexNumber(unsigned int fileNumber)
 {  
-  this->sendCommand(0x03, (fileNumber>>8) & 0xFF, fileNumber & (byte)0xFF);
+  this->sendCommand(MP3_CMD_PLAY_IDX, (fileNumber>>8) & 0xFF, fileNumber & (byte)0xFF);
 }
 
 void  JQ6500_Serial::nextFolder()
 {
-  this->sendCommand(0x0F, 0x01);  
+  this->sendCommand(MP3_CMD_NEXT_FOLDER, 0x01);  
 }
 
 void  JQ6500_Serial::prevFolder()
 {
-  this->sendCommand(0x0F, 0x00);
+  this->sendCommand(MP3_CMD_PREV_FOLDER, 0x00);
 }
 
 void  JQ6500_Serial::playFileNumberInFolderNumber(unsigned int folderNumber, unsigned int fileNumber)
 {
-  this->sendCommand(0x12, folderNumber & 0xFF, fileNumber & 0xFF);
+  this->sendCommand(MP3_CMD_PLAY_FILE_FOLDER, folderNumber & 0xFF, fileNumber & 0xFF);
 }
 
 void  JQ6500_Serial::volumeUp()
 {
-  this->sendCommand(0x04);
+  this->sendCommand(MP3_CMD_VOL_UP);
 }
 
 void  JQ6500_Serial::volumeDn()
 {
-  this->sendCommand(0x05);
+  this->sendCommand(MP3_CMD_VOL_DN);
 }
 
 void  JQ6500_Serial::setVolume(byte volumeFrom0To30)
 {
-  this->sendCommand(0x06, volumeFrom0To30);
+  this->sendCommand(MP3_CMD_VOL_SET, volumeFrom0To30);
 }
 
 void  JQ6500_Serial::setEqualizer(byte equalizerMode)
 {
-  this->sendCommand(0x07, equalizerMode);
+  this->sendCommand(MP3_CMD_EQ_SET, equalizerMode);
 }
 
 void  JQ6500_Serial::setLoopMode(byte loopMode)
 {
-  this->sendCommand(0x11, loopMode);
+  this->sendCommand(MP3_CMD_LOOP_SET, loopMode);
 }
 
 void  JQ6500_Serial::setSource(byte source)
 {
-  this->sendCommand(0x09, source);
+  this->sendCommand(MP3_CMD_SOURCE_SET, source);
 }
 
 void  JQ6500_Serial::sleep()
 {
-  this->sendCommand(0x0A);
+  this->sendCommand(MP3_CMD_SLEEP);
 }
 
 void  JQ6500_Serial::reset()
 {
-  this->sendCommand(0x0C);
+  this->sendCommand(MP3_CMD_RESET);
   delay(500); // We need some time for the reset to happen
 }
 
@@ -132,7 +132,7 @@ void  JQ6500_Serial::reset()
         statTotal = 0;
         for(byte x = 0; x < MP3_STATUS_CHECKS_IN_AGREEMENT; x++)
         {
-          stat = this->sendCommandWithUnsignedIntResponse(0x42);      
+          stat = this->sendCommandWithUnsignedIntResponse(MP3_CMD_STATUS);      
           if(stat == 0) return 0; // STOP is fairly reliable
           statTotal += stat;
         }
@@ -142,20 +142,20 @@ void  JQ6500_Serial::reset()
       return statTotal / MP3_STATUS_CHECKS_IN_AGREEMENT;      
     }
     
-    byte  JQ6500_Serial::getVolume()    { return this->sendCommandWithUnsignedIntResponse(0x43); }
-    byte  JQ6500_Serial::getEqualizer() { return this->sendCommandWithUnsignedIntResponse(0x44); }
-    byte  JQ6500_Serial::getLoopMode()  { return this->sendCommandWithUnsignedIntResponse(0x45); }
-    unsigned int  JQ6500_Serial::getVersion()   { return this->sendCommandWithUnsignedIntResponse(0x46); }
+    byte  JQ6500_Serial::getVolume()    { return this->sendCommandWithUnsignedIntResponse(MP3_CMD_VOL_GET); }
+    byte  JQ6500_Serial::getEqualizer() { return this->sendCommandWithUnsignedIntResponse(MP3_CMD_EQ_GET); }
+    byte  JQ6500_Serial::getLoopMode()  { return this->sendCommandWithUnsignedIntResponse(MP3_CMD_LOOP_GET); }
+    unsigned int  JQ6500_Serial::getVersion()   { return this->sendCommandWithUnsignedIntResponse(MP3_CMD_VER_GET); }
     
     unsigned int  JQ6500_Serial::countFiles(byte source)   
     {
       if(source == MP3_SRC_SDCARD)
       {
-        return this->sendCommandWithUnsignedIntResponse(0x47); 
+        return this->sendCommandWithUnsignedIntResponse(MP3_CMD_COUNT_SD); 
       }
       else if (source == MP3_SRC_BUILTIN)
       {
-        return this->sendCommandWithUnsignedIntResponse(0x49);
+        return this->sendCommandWithUnsignedIntResponse(MP3_CMD_COUNT_MEM);
       }     
       
       return 0;
@@ -165,7 +165,7 @@ void  JQ6500_Serial::reset()
     {
       if(source == MP3_SRC_SDCARD)
       {
-        return this->sendCommandWithUnsignedIntResponse(0x53); 
+        return this->sendCommandWithUnsignedIntResponse(MP3_CMD_COUNT_FOLDERS); 
       }
       
       return 0;
@@ -175,22 +175,22 @@ void  JQ6500_Serial::reset()
     {
       if(source == MP3_SRC_SDCARD)
       {
-        return this->sendCommandWithUnsignedIntResponse(0x4B); 
+        return this->sendCommandWithUnsignedIntResponse(MP3_CMD_CURRENT_FILE_IDX_SD); 
       }
       else if (source == MP3_SRC_BUILTIN)
       {
-        return this->sendCommandWithUnsignedIntResponse(0x4D)+1; // CRAZY!
+        return this->sendCommandWithUnsignedIntResponse(MP3_CMD_CURRENT_FILE_IDX_MEM)+1; // CRAZY!
       }     
       
       return 0;
     }
     
-    unsigned int  JQ6500_Serial::currentFilePositionInSeconds() { return this->sendCommandWithUnsignedIntResponse(0x50); }
-    unsigned int  JQ6500_Serial::currentFileLengthInSeconds()   { return this->sendCommandWithUnsignedIntResponse(0x51); }
+    unsigned int  JQ6500_Serial::currentFilePositionInSeconds() { return this->sendCommandWithUnsignedIntResponse(MP3_CMD_CURRENT_FILE_POS_SEC); }
+    unsigned int  JQ6500_Serial::currentFileLengthInSeconds()   { return this->sendCommandWithUnsignedIntResponse(MP3_CMD_CURRENT_FILE_LEN_SEC); }
     
     void          JQ6500_Serial::currentFileName(char *buffer, unsigned int bufferLength) 
     {
-      this->sendCommand(0x52, 0, 0, buffer, bufferLength);
+      this->sendCommand(MP3_CMD_CURRENT_FILE_NAME, 0, 0, buffer, bufferLength);
     }
     
     // Used for the status commands, they mostly return an 8 to 16 bit integer 
@@ -230,13 +230,13 @@ void  JQ6500_Serial::reset()
       // These ones do
       switch(command)
       {        
-        case 0x03: args = 2; break;
-        case 0x06: args = 1; break;
-        case 0x07: args = 1; break;        
-        case 0x09: args = 1; break;
-        case 0x0F: args = 1; break;
-        case 0x11: args = 1; break;
-        case 0x12: args = 2; break;
+        case MP3_CMD_PLAY_IDX: args = 2; break;
+        case MP3_CMD_VOL_SET: args = 1; break;
+        case MP3_CMD_EQ_SET: args = 1; break;        
+        case MP3_CMD_SOURCE_SET: args = 1; break;
+        case MP3_CMD_PREV_FOLDER: args = 1; break; // Also MP3_CMD_NEXT_FOLDER
+        case MP3_CMD_LOOP_SET: args = 1; break;
+        case MP3_CMD_PLAY_FILE_FOLDER: args = 2; break;
       }
       
 #if MP3_DEBUG
