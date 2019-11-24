@@ -60,11 +60,15 @@ void setup() {
       delay(3000);
     }
   }
+ 
+ // mitigate "pseudo random" by sampling the noise on analogue pin0 and use it as a value.
+ randomSeed(analogRead(A0)); 
+ 
 }
 
 void loop() {
   
-  //  ** NOTE: Checking for STOPPED doesn't work with the builtin memory 
+  //  ** NOTE: Checking for STOPPED doesn't work with the builtin memory z
   //      because in that case the devie appears to only return PAUSED, not STOPPED  
   byte stat = mp3.getStatus();
   if(stat != MP3_STATUS_PLAYING) 
