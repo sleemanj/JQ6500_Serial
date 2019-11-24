@@ -86,7 +86,6 @@ void loop() {
     
     // and play it
     mp3.playFileByIndexNumber(pick);
-    mp3.play();
    
     // if we are in SD Card mode, we can print the file name
     // the built in memory does not have file names
