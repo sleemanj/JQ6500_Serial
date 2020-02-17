@@ -19,8 +19,9 @@
 JQ6500_Serial mp3;
 
 void setup() {
-  // Specific to ESP Platform, Tx and Rx pin must be declared in the begin method, instead of during object instanciation.
-  mp3.begin(9600,8,9);
+  // Specific to ESP Platform. Serial Config, TX and RX pins must be declared
+  // in the begin method, instead of during object instanciation.
+  mp3.begin(9600, SWSERIAL_8N1, 8, 9);
   mp3.reset();
   mp3.setVolume(20);
   mp3.setLoopMode(MP3_LOOP_ALL);
