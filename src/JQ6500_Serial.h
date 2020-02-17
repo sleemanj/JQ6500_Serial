@@ -108,11 +108,9 @@ class JQ6500_Serial : public SoftwareSerial
      *
      * and all the other commands :-)
      */
-#if defined(ESP8266) || defined(ESP32)
-    JQ6500_Serial() : SoftwareSerial() { };
-#else
+    
     JQ6500_Serial(short rxPin, short txPin) : SoftwareSerial(rxPin,txPin) { };
-#endif
+    
     /** Start playing the current file.
      */
     
