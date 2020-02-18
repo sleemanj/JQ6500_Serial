@@ -1,0 +1,23 @@
+{
+    "name": "JQ6500_Serial",
+    "version": "1.1.0",
+    "keywords": "jq6500, mp3, player, audio, module, speaker, serial",
+    "description": "Library for controlling JQ6500 MP3 Player Devices",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/sleemanj/JQ6500_Serial.git"
+    },
+    "authors":
+    [
+        {
+            "name": "James Sleeman",
+            "maintainer": true
+        }
+    ],
+    "frameworks": "arduino",
+    "platforms": [
+        "atmelavr",
+        "espressif8266",
+        "espressif32"
+    ]
+}
