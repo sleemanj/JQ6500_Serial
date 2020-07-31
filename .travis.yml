@@ -43,6 +43,5 @@ install:
   - platformio lib -g uninstall 168
 
 script:
-  - platformio run --target clean
   - platformio ci --lib="." --board=uno
   - platformio ci --lib="." --lib="/tmp/espsoftwareserial-master" --board=esp-wrover-kit
