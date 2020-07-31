@@ -71,6 +71,12 @@ env:
 install:
   - pip install -U platformio pip setuptools
   - platformio update
+  #
+  # Libraries from PlatformIO Library Registry:
+  #
+  # https://platformio.org/lib/show/168/EspSoftwareSerial
+  # https://platformio.org/lib/show/417/SPI4Teensy3
+  - platformio lib -g install 168
 
 script:
   - platformio ci --lib="." --board=uno --board=esp-wrover-kit
