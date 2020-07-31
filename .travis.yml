@@ -37,11 +37,10 @@ env:
 install:
   - pip install -U platformio pip setuptools
   - platformio update
-  #
-  # Libraries from PlatformIO Library Registry:
-  #
-  # https://platformio.org/lib/show/168/EspSoftwareSerial
-  - platformio lib -g install 168
+  # download EspSoftwareSerial to temporary directory
+  - wget https://github.com/plerup/espsoftwareserial/archive/master.zip -O /tmp/espsoftwareserial_source.zip
+  - unzip /tmp/espsoftwareserial.zip -d /tmp/
 
 script:
-  - platformio ci --lib="." --board=uno --board=esp-wrover-kit
+  - platformio ci --lib="." --board=uno
+  - platformio ci --lib="." --lib="/tmp/espsoftwareserial-master" --board=esp-wrover-kit
