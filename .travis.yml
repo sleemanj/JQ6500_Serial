@@ -42,5 +42,6 @@ install:
   - unzip /tmp/espsoftwareserial_source.zip -d /tmp/
 
 script:
+  - platformio run --target clean
   - platformio ci --lib="." --board=uno
   - platformio ci --lib="." --lib="/tmp/espsoftwareserial-master" --board=esp-wrover-kit
