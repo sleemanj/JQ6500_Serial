@@ -37,10 +37,10 @@ env:
 install:
   - pip install -U platformio pip setuptools
   - platformio update
+  - rm -rf /home/travis/.platformio/lib
   # download EspSoftwareSerial to temporary directory
   - wget https://github.com/plerup/espsoftwareserial/archive/master.zip -O /tmp/espsoftwareserial_source.zip
   - unzip /tmp/espsoftwareserial_source.zip -d /tmp/
-  - platformio lib -g uninstall 168
 
 script:
   - platformio ci --lib="." --board=uno
