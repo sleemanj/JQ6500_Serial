@@ -39,7 +39,7 @@ install:
   - platformio update
   # download EspSoftwareSerial to temporary directory
   - wget https://github.com/plerup/espsoftwareserial/archive/master.zip -O /tmp/espsoftwareserial_source.zip
-  - unzip /tmp/espsoftwareserial.zip -d /tmp/
+  - unzip /tmp/espsoftwareserial_source.zip -d /tmp/
 
 script:
   - platformio ci --lib="." --board=uno
