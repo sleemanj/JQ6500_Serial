@@ -69,13 +69,13 @@ Define a new instance of JQ6500_Serial, passing the serial connection the module
 
 You can use any Serial libraries that implement a *Stream* object, for example:
 
-**Hardware** serial connection:
+**Hardware** serial connection (see PlayByNumber example):
 
     JQ6500_Serial mp3(&Serial);
     [...]
     Serial.begin(9600);
 
-**Software** serial connection:
+**Software** serial connection (see other examples):
 
     #include <SoftwareSerial.h>
     SoftwareSerial mySerial(RX_PIN, TX_PIN);

@@ -16,12 +16,13 @@
 //   Arduino Pin 9 is connected to one end of a  1k resistor, 
 //     the other end of the 1k resistor is connected to RX of the JQ6500
 //   If your Arduino is 3v3 powered, you can omit the 1k series resistor
-JQ6500_Serial mp3(8,9);
+SoftwareSerial mySerial(8, 9);
+JQ6500_Serial mp3(&mySerial);
 
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
-  mp3.begin(9600);
+  mySerial.begin(9600);
   mp3.reset();
   statusAndHelpOutput();
 }
@@ -261,4 +262,3 @@ void statusAndHelpOutput()
    
    Serial.println(F("+ Vol up\t- Vol down\tm Mute\nv[0-30] Set volume\n\ne[N/P/R/J/C/B] Equalizer (N)ormal, (P)op, (R)ock, (J)azz, (C)lassic, (B)ass\nl[A/F/O/R/N]   Loop (A)ll, (F)older, (O)ne, (R)???, (N)o Loop\ns[S/B]         Switch to (S)D Card/(B)uilt In Memory\n\n"));
 }
-
