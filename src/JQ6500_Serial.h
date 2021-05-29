@@ -109,7 +109,7 @@ class JQ6500_Serial
      */
     
     JQ6500_Serial(short rxPin, short txPin) { };
-	JQ6500_Serial(Stream *dev) : _serial(dev) {}
+    JQ6500_Serial(Stream *dev) : _serial(dev) {}
     JQ6500_Serial(Stream &dev) : _serial(&dev) {}
 		
     /** Start playing the current file.
@@ -403,7 +403,7 @@ class JQ6500_Serial
     
     int    waitUntilAvailable(unsigned long maxWaitTime = 1000);
 	
-	Stream *_serial;
+    Stream *_serial;
     
     static const uint8_t MP3_CMD_BEGIN = 0x7E;
     static const uint8_t MP3_CMD_END   = 0xEF;
