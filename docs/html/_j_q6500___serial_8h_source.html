@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.9.1"/>
-<title>JQ6500 MP3 Player Arduino Library: /bigdrive/home/boffin/Arduino-1.6/libraries/JQ6500_Serial/src/JQ6500_Serial.h Source File</title>
+<title>JQ6500 MP3 Player Arduino Library: C:/Users/luca/documents/GitHub/JQ6500_Serial/src/JQ6500_Serial.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -113,173 +113,213 @@ $(document).ready(function(){initNavTree('_j_q6500___serial_8h_source.html','');
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#ifndef JQ6500Serial_h</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#define JQ6500Serial_h</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;SoftwareSerial.h&gt;</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#define MP3_EQ_NORMAL     0</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#define MP3_EQ_POP        1</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#define MP3_EQ_ROCK       2</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#define MP3_EQ_JAZZ       3</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#define MP3_EQ_CLASSIC    4</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#define MP3_EQ_BASS       5</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#define MP3_SRC_SDCARD    1</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#define MP3_SRC_BUILTIN   4</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">// Looping options, ALL, FOLDER, ONE and ONE_STOP are the </span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">// only ones that appear to do much interesting</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">//  ALL plays all the tracks in a repeating loop</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">//  FOLDER plays all the tracks in the same folder in a repeating loop</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">//  ONE plays the same track repeating</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">//  ONE_STOP does not loop, plays the track and stops</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">//  RAM seems to play one track and someties disables the ability to </span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">//  move to next/previous track, really weird.</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#define MP3_LOOP_ALL      0</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#define MP3_LOOP_FOLDER   1</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#define MP3_LOOP_ONE      2</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#define MP3_LOOP_RAM      3</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#define MP3_LOOP_ONE_STOP 4</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#define MP3_LOOP_NONE     4 </span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#define MP3_STATUS_STOPPED 0</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#define MP3_STATUS_PLAYING 1</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#define MP3_STATUS_PAUSED  2</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">// The response from a status query we get is  for some reason</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">// a bit... iffy, most of the time it is reliable, but sometimes</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">// instead of a playing (1) response, we get a paused (2) response</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">// even though it is playing.  Stopped responses seem reliable.</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">// So to work around this when getStatus() is called we actually</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">// request the status this many times and only if one of them is STOPPED</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">// or they are all in agreement that it is playing or paused then</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">// we return that status.  If some of them differ, we do another set </span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">// of tests etc...</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#define MP3_STATUS_CHECKS_IN_AGREEMENT 4</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#define MP3_DEBUG 0</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="class_j_q6500___serial.html">   80</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_j_q6500___serial.html">JQ6500_Serial</a> : <span class="keyword">public</span> SoftwareSerial</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;{</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keyword">public</span>: </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
-<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="class_j_q6500___serial.html#a37e8e9d6d1eeb5f77efa42a4fdb510d0">  112</a></span>&#160;    <a class="code" href="class_j_q6500___serial.html#a37e8e9d6d1eeb5f77efa42a4fdb510d0">JQ6500_Serial</a>(<span class="keywordtype">short</span> rxPin, <span class="keywordtype">short</span> txPin) : SoftwareSerial(rxPin,txPin) { };</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_j_q6500___serial.html#ae3fbb860a8c7e061bdcc16c06e20547f">play</a>();</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_j_q6500___serial.html#a80a2ef4fbb20aa984eca0ddb03328718">restart</a>();</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    </div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_j_q6500___serial.html#ad6265593f16bb2268e64938de5e4d881">pause</a>();</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    </div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_j_q6500___serial.html#a1479a28386d265ad160b4638b60f4b52">next</a>();</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    </div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_j_q6500___serial.html#a0a0c4dd1b805fd1799395e01cf022da9">prev</a>();</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    </div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_j_q6500___serial.html#a0a933e15d95030635f97fd30bb1a86c8">nextFolder</a>();</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    </div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_j_q6500___serial.html#ad11c922dfd1b670e394fa57ee6ce4955">prevFolder</a>();</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    </div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_j_q6500___serial.html#aaaa94916df5363cf9d4f843af112688d">playFileByIndexNumber</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> fileNumber);        </div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    </div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_j_q6500___serial.html#a355abffc73948ed3929889bc822d17d4">playFileNumberInFolderNumber</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> folderNumber, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> fileNumber);</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    </div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_j_q6500___serial.html#a7af96fb244cf2a75b2a735771ab69b72">volumeUp</a>();</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    </div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_j_q6500___serial.html#a48c715b6ba9ebea42ccd704cff7f0fb3">volumeDn</a>();</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    </div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_j_q6500___serial.html#a5817319d586676bd91b314f722eec699">setVolume</a>(byte volumeFrom0To30);</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    </div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_j_q6500___serial.html#ad1d7c2adac6d94e1a5b36195095b4f37">setEqualizer</a>(byte equalizerMode); <span class="comment">// EQ_NORMAL to EQ_BASS</span></div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    </div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_j_q6500___serial.html#a96783219caa0d849f6e48540f312fd20">setLoopMode</a>(byte loopMode);</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    </div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_j_q6500___serial.html#af730b77807371203d79bc2824f69986b">setSource</a>(byte source);        <span class="comment">// SRC_BUILTIN or SRC_SDCARD       </span></div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    </div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_j_q6500___serial.html#a2637fb1a98af48facc7bd0854e512d17">sleep</a>();</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    </div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_j_q6500___serial.html#a656a4a915ca0ca29ef6d6cb3311efa42">reset</a>();</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    </div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="comment">// Status querying commands</span></div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="comment"></span>    byte <a class="code" href="class_j_q6500___serial.html#a26a539cd68ac3b0ce35c8af9dd68d2cb">getStatus</a>();</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    </div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    byte <a class="code" href="class_j_q6500___serial.html#a43c75b0c11ec1fcc1f81173cb0fa2fc4">getVolume</a>();</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    </div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    byte <a class="code" href="class_j_q6500___serial.html#a8434bee28c17f1416d52b47233b7b02d">getEqualizer</a>();</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    </div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    byte <a class="code" href="class_j_q6500___serial.html#a664cf9ead4482b9b8aa1f624a9946fb0">getLoopMode</a>();</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    </div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>   <a class="code" href="class_j_q6500___serial.html#a7435b371bce3ee270578e1b67b992541">countFiles</a>(byte source);    </div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    </div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>   <a class="code" href="class_j_q6500___serial.html#a4752f08b33ec78305812e0251e7ecfcc">countFolders</a>(byte source);    </div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    </div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>   <a class="code" href="class_j_q6500___serial.html#a7c56631edbde77192027a027a7dfb108">currentFileIndexNumber</a>(byte source);</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160; </div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>   <a class="code" href="class_j_q6500___serial.html#ad954738247ecb0117f0aab66e6409d24">currentFilePositionInSeconds</a>();</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    </div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>   <a class="code" href="class_j_q6500___serial.html#abc63d2b3f4902c563839cf0c6ba3e8f2">currentFileLengthInSeconds</a>();</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    </div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <span class="keywordtype">void</span>           <a class="code" href="class_j_q6500___serial.html#a42d8644021cd216f1fe5bd69ad161f1f">currentFileName</a>(<span class="keywordtype">char</span> *buffer, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> bufferLength);    </div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        </div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    </div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;  <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    </div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_j_q6500___serial.html#a60b3b91b08c27b4a99d8cc790b9b7258">sendCommand</a>(byte command, byte arg1, byte arg2, <span class="keywordtype">char</span> *responseBuffer, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> bufferLength);</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    <span class="comment">// Just some different versions of that for ease of use</span></div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_j_q6500___serial.html#a60b3b91b08c27b4a99d8cc790b9b7258">sendCommand</a>(byte command);    </div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_j_q6500___serial.html#a60b3b91b08c27b4a99d8cc790b9b7258">sendCommand</a>(byte command, byte arg1);    </div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_j_q6500___serial.html#a60b3b91b08c27b4a99d8cc790b9b7258">sendCommand</a>(byte command, byte arg1, byte arg2);</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    </div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_j_q6500___serial.html#a9620925f5e42c30586b6ed8300372781">sendCommandWithUnsignedIntResponse</a>(byte command);</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    <span class="comment">// This seems not that useful since there only seems to be a version 1 anway :/</span></div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> getVersion();</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    </div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    <span class="keywordtype">size_t</span> readBytesUntilAndIncluding(<span class="keywordtype">char</span> terminator, <span class="keywordtype">char</span> *buffer, <span class="keywordtype">size_t</span> length, byte maxOneLineOnly = 0);</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    </div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    <span class="keywordtype">int</span>    waitUntilAvailable(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> maxWaitTime = 1000);</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    </div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;};</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="class_j_q6500___serial_html_a0a933e15d95030635f97fd30bb1a86c8"><div class="ttname"><a href="class_j_q6500___serial.html#a0a933e15d95030635f97fd30bb1a86c8">JQ6500_Serial::nextFolder</a></div><div class="ttdeci">void nextFolder()</div><div class="ttdoc">Play the next folder. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:69</div></div>
-<div class="ttc" id="class_j_q6500___serial_html_a9620925f5e42c30586b6ed8300372781"><div class="ttname"><a href="class_j_q6500___serial.html#a9620925f5e42c30586b6ed8300372781">JQ6500_Serial::sendCommandWithUnsignedIntResponse</a></div><div class="ttdeci">unsigned int sendCommandWithUnsignedIntResponse(byte command)</div><div class="ttdoc">Send a command to the JQ6500 module, and get a response. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:198</div></div>
-<div class="ttc" id="class_j_q6500___serial_html_a37e8e9d6d1eeb5f77efa42a4fdb510d0"><div class="ttname"><a href="class_j_q6500___serial.html#a37e8e9d6d1eeb5f77efa42a4fdb510d0">JQ6500_Serial::JQ6500_Serial</a></div><div class="ttdeci">JQ6500_Serial(short rxPin, short txPin)</div><div class="ttdoc">Create JQ6500 object. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.h:112</div></div>
-<div class="ttc" id="class_j_q6500___serial_html_a355abffc73948ed3929889bc822d17d4"><div class="ttname"><a href="class_j_q6500___serial.html#a355abffc73948ed3929889bc822d17d4">JQ6500_Serial::playFileNumberInFolderNumber</a></div><div class="ttdeci">void playFileNumberInFolderNumber(unsigned int folderNumber, unsigned int fileNumber)</div><div class="ttdoc">Play a specific file in a specific folder based on the name of those folder and file. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:79</div></div>
-<div class="ttc" id="class_j_q6500___serial_html_a60b3b91b08c27b4a99d8cc790b9b7258"><div class="ttname"><a href="class_j_q6500___serial.html#a60b3b91b08c27b4a99d8cc790b9b7258">JQ6500_Serial::sendCommand</a></div><div class="ttdeci">void sendCommand(byte command, byte arg1, byte arg2, char *responseBuffer, unsigned int bufferLength)</div><div class="ttdoc">Send a command to the JQ6500 module,. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:220</div></div>
-<div class="ttc" id="class_j_q6500___serial_html_a5817319d586676bd91b314f722eec699"><div class="ttname"><a href="class_j_q6500___serial.html#a5817319d586676bd91b314f722eec699">JQ6500_Serial::setVolume</a></div><div class="ttdeci">void setVolume(byte volumeFrom0To30)</div><div class="ttdoc">Set the volume to a specific level (0 to 30). </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:94</div></div>
-<div class="ttc" id="class_j_q6500___serial_html_ad6265593f16bb2268e64938de5e4d881"><div class="ttname"><a href="class_j_q6500___serial.html#ad6265593f16bb2268e64938de5e4d881">JQ6500_Serial::pause</a></div><div class="ttdeci">void pause()</div><div class="ttdoc">Pause the current file. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:49</div></div>
-<div class="ttc" id="class_j_q6500___serial_html_a656a4a915ca0ca29ef6d6cb3311efa42"><div class="ttname"><a href="class_j_q6500___serial.html#a656a4a915ca0ca29ef6d6cb3311efa42">JQ6500_Serial::reset</a></div><div class="ttdeci">void reset()</div><div class="ttdoc">Reset the device (softly). </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:119</div></div>
-<div class="ttc" id="class_j_q6500___serial_html_a48c715b6ba9ebea42ccd704cff7f0fb3"><div class="ttname"><a href="class_j_q6500___serial.html#a48c715b6ba9ebea42ccd704cff7f0fb3">JQ6500_Serial::volumeDn</a></div><div class="ttdeci">void volumeDn()</div><div class="ttdoc">Decrease the volume by 1 (volume ranges 0 to 30). </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:89</div></div>
-<div class="ttc" id="class_j_q6500___serial_html_abc63d2b3f4902c563839cf0c6ba3e8f2"><div class="ttname"><a href="class_j_q6500___serial.html#abc63d2b3f4902c563839cf0c6ba3e8f2">JQ6500_Serial::currentFileLengthInSeconds</a></div><div class="ttdeci">unsigned int currentFileLengthInSeconds()</div><div class="ttdoc">For the currently playing or paused file, return the total length of the file in seconds. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:189</div></div>
-<div class="ttc" id="class_j_q6500___serial_html_a4752f08b33ec78305812e0251e7ecfcc"><div class="ttname"><a href="class_j_q6500___serial.html#a4752f08b33ec78305812e0251e7ecfcc">JQ6500_Serial::countFolders</a></div><div class="ttdeci">unsigned int countFolders(byte source)</div><div class="ttdoc">Count the number of folders on the specified media. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:164</div></div>
-<div class="ttc" id="class_j_q6500___serial_html_ae3fbb860a8c7e061bdcc16c06e20547f"><div class="ttname"><a href="class_j_q6500___serial.html#ae3fbb860a8c7e061bdcc16c06e20547f">JQ6500_Serial::play</a></div><div class="ttdeci">void play()</div><div class="ttdoc">Start playing the current file. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:34</div></div>
-<div class="ttc" id="class_j_q6500___serial_html_a664cf9ead4482b9b8aa1f624a9946fb0"><div class="ttname"><a href="class_j_q6500___serial.html#a664cf9ead4482b9b8aa1f624a9946fb0">JQ6500_Serial::getLoopMode</a></div><div class="ttdeci">byte getLoopMode()</div><div class="ttdoc">Get loop mode. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:147</div></div>
-<div class="ttc" id="class_j_q6500___serial_html_ad1d7c2adac6d94e1a5b36195095b4f37"><div class="ttname"><a href="class_j_q6500___serial.html#ad1d7c2adac6d94e1a5b36195095b4f37">JQ6500_Serial::setEqualizer</a></div><div class="ttdeci">void setEqualizer(byte equalizerMode)</div><div class="ttdoc">Set the equalizer to one of 6 preset modes. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:99</div></div>
-<div class="ttc" id="class_j_q6500___serial_html_a80a2ef4fbb20aa984eca0ddb03328718"><div class="ttname"><a href="class_j_q6500___serial.html#a80a2ef4fbb20aa984eca0ddb03328718">JQ6500_Serial::restart</a></div><div class="ttdeci">void restart()</div><div class="ttdoc">Restart the current (possibly paused) track from the beginning. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:39</div></div>
-<div class="ttc" id="class_j_q6500___serial_html_a8434bee28c17f1416d52b47233b7b02d"><div class="ttname"><a href="class_j_q6500___serial.html#a8434bee28c17f1416d52b47233b7b02d">JQ6500_Serial::getEqualizer</a></div><div class="ttdeci">byte getEqualizer()</div><div class="ttdoc">Get the equalizer mode. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:146</div></div>
-<div class="ttc" id="class_j_q6500___serial_html_a1479a28386d265ad160b4638b60f4b52"><div class="ttname"><a href="class_j_q6500___serial.html#a1479a28386d265ad160b4638b60f4b52">JQ6500_Serial::next</a></div><div class="ttdeci">void next()</div><div class="ttdoc">Play the next file. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:54</div></div>
-<div class="ttc" id="class_j_q6500___serial_html_a42d8644021cd216f1fe5bd69ad161f1f"><div class="ttname"><a href="class_j_q6500___serial.html#a42d8644021cd216f1fe5bd69ad161f1f">JQ6500_Serial::currentFileName</a></div><div class="ttdeci">void currentFileName(char *buffer, unsigned int bufferLength)</div><div class="ttdoc">Get the name of the "current" file on the SD Card. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:191</div></div>
-<div class="ttc" id="class_j_q6500___serial_html_a43c75b0c11ec1fcc1f81173cb0fa2fc4"><div class="ttname"><a href="class_j_q6500___serial.html#a43c75b0c11ec1fcc1f81173cb0fa2fc4">JQ6500_Serial::getVolume</a></div><div class="ttdeci">byte getVolume()</div><div class="ttdoc">Get the current volume level. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:145</div></div>
-<div class="ttc" id="class_j_q6500___serial_html_a7af96fb244cf2a75b2a735771ab69b72"><div class="ttname"><a href="class_j_q6500___serial.html#a7af96fb244cf2a75b2a735771ab69b72">JQ6500_Serial::volumeUp</a></div><div class="ttdeci">void volumeUp()</div><div class="ttdoc">Increase the volume by 1 (volume ranges 0 to 30). </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:84</div></div>
-<div class="ttc" id="class_j_q6500___serial_html_a7c56631edbde77192027a027a7dfb108"><div class="ttname"><a href="class_j_q6500___serial.html#a7c56631edbde77192027a027a7dfb108">JQ6500_Serial::currentFileIndexNumber</a></div><div class="ttdeci">unsigned int currentFileIndexNumber(byte source)</div><div class="ttdoc">For the currently playing (or paused, or file that would be played next if stopped) file...</div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:174</div></div>
-<div class="ttc" id="class_j_q6500___serial_html_ad954738247ecb0117f0aab66e6409d24"><div class="ttname"><a href="class_j_q6500___serial.html#ad954738247ecb0117f0aab66e6409d24">JQ6500_Serial::currentFilePositionInSeconds</a></div><div class="ttdeci">unsigned int currentFilePositionInSeconds()</div><div class="ttdoc">For the currently playing or paused file, return the current position in seconds. ...</div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:188</div></div>
-<div class="ttc" id="class_j_q6500___serial_html_a7435b371bce3ee270578e1b67b992541"><div class="ttname"><a href="class_j_q6500___serial.html#a7435b371bce3ee270578e1b67b992541">JQ6500_Serial::countFiles</a></div><div class="ttdeci">unsigned int countFiles(byte source)</div><div class="ttdoc">Count the number of files on the specified media. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:150</div></div>
-<div class="ttc" id="class_j_q6500___serial_html"><div class="ttname"><a href="class_j_q6500___serial.html">JQ6500_Serial</a></div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.h:80</div></div>
-<div class="ttc" id="class_j_q6500___serial_html_a96783219caa0d849f6e48540f312fd20"><div class="ttname"><a href="class_j_q6500___serial.html#a96783219caa0d849f6e48540f312fd20">JQ6500_Serial::setLoopMode</a></div><div class="ttdeci">void setLoopMode(byte loopMode)</div><div class="ttdoc">Set the looping mode. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:104</div></div>
-<div class="ttc" id="class_j_q6500___serial_html_a0a0c4dd1b805fd1799395e01cf022da9"><div class="ttname"><a href="class_j_q6500___serial.html#a0a0c4dd1b805fd1799395e01cf022da9">JQ6500_Serial::prev</a></div><div class="ttdeci">void prev()</div><div class="ttdoc">Play the previous file. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:59</div></div>
-<div class="ttc" id="class_j_q6500___serial_html_a26a539cd68ac3b0ce35c8af9dd68d2cb"><div class="ttname"><a href="class_j_q6500___serial.html#a26a539cd68ac3b0ce35c8af9dd68d2cb">JQ6500_Serial::getStatus</a></div><div class="ttdeci">byte getStatus()</div><div class="ttdoc">Get the status from the device. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:126</div></div>
-<div class="ttc" id="class_j_q6500___serial_html_ad11c922dfd1b670e394fa57ee6ce4955"><div class="ttname"><a href="class_j_q6500___serial.html#ad11c922dfd1b670e394fa57ee6ce4955">JQ6500_Serial::prevFolder</a></div><div class="ttdeci">void prevFolder()</div><div class="ttdoc">Play the previous folder. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:74</div></div>
-<div class="ttc" id="class_j_q6500___serial_html_af730b77807371203d79bc2824f69986b"><div class="ttname"><a href="class_j_q6500___serial.html#af730b77807371203d79bc2824f69986b">JQ6500_Serial::setSource</a></div><div class="ttdeci">void setSource(byte source)</div><div class="ttdoc">Set the source to read mp3 data from. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:109</div></div>
-<div class="ttc" id="class_j_q6500___serial_html_aaaa94916df5363cf9d4f843af112688d"><div class="ttname"><a href="class_j_q6500___serial.html#aaaa94916df5363cf9d4f843af112688d">JQ6500_Serial::playFileByIndexNumber</a></div><div class="ttdeci">void playFileByIndexNumber(unsigned int fileNumber)</div><div class="ttdoc">Play a specific file based on it&#39;s (FAT table) index number. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:64</div></div>
-<div class="ttc" id="class_j_q6500___serial_html_a2637fb1a98af48facc7bd0854e512d17"><div class="ttname"><a href="class_j_q6500___serial.html#a2637fb1a98af48facc7bd0854e512d17">JQ6500_Serial::sleep</a></div><div class="ttdeci">void sleep()</div><div class="ttdoc">Put the device to sleep. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:114</div></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#define MP3_EQ_NORMAL     0</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#define MP3_EQ_POP        1</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#define MP3_EQ_ROCK       2</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#define MP3_EQ_JAZZ       3</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#define MP3_EQ_CLASSIC    4</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#define MP3_EQ_BASS       5</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#define MP3_SRC_SDCARD    1</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#define MP3_SRC_BUILTIN   4</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">// Looping options, ALL, FOLDER, ONE and ONE_STOP are the </span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">// only ones that appear to do much interesting</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">//  ALL plays all the tracks in a repeating loop</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">//  FOLDER plays all the tracks in the same folder in a repeating loop</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">//  ONE plays the same track repeating</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">//  ONE_STOP does not loop, plays the track and stops</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">//  RAM seems to play one track and someties disables the ability to </span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">//  move to next/previous track, really weird.</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#define MP3_LOOP_ALL      0</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#define MP3_LOOP_FOLDER   1</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#define MP3_LOOP_ONE      2</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#define MP3_LOOP_RAM      3</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#define MP3_LOOP_ONE_STOP 4</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#define MP3_LOOP_NONE     4 </span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#define MP3_STATUS_STOPPED 0</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#define MP3_STATUS_PLAYING 1</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#define MP3_STATUS_PAUSED  2</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">// The response from a status query we get is  for some reason</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">// a bit... iffy, most of the time it is reliable, but sometimes</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">// instead of a playing (1) response, we get a paused (2) response</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">// even though it is playing.  Stopped responses seem reliable.</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">// So to work around this when getStatus() is called we actually</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">// request the status this many times and only if one of them is STOPPED</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">// or they are all in agreement that it is playing or paused then</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">// we return that status.  If some of them differ, we do another set </span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">// of tests etc...</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#define MP3_STATUS_CHECKS_IN_AGREEMENT 4</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#define MP3_DEBUG 0</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="class_j_q6500___serial.html">   79</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_j_q6500___serial.html">JQ6500_Serial</a> </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;{</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keyword">public</span>: </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="class_j_q6500___serial.html#a9e998be9967b448b672ef90b9b689d76">  111</a></span>&#160;    <a class="code" href="class_j_q6500___serial.html#a9e998be9967b448b672ef90b9b689d76">JQ6500_Serial</a>(Stream *dev) : _serial(dev) {}</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <a class="code" href="class_j_q6500___serial.html#a9e998be9967b448b672ef90b9b689d76">JQ6500_Serial</a>(Stream &amp;dev) : _serial(&amp;dev) {}</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_j_q6500___serial.html#ae3fbb860a8c7e061bdcc16c06e20547f">play</a>();</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_j_q6500___serial.html#a80a2ef4fbb20aa984eca0ddb03328718">restart</a>();</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_j_q6500___serial.html#ad6265593f16bb2268e64938de5e4d881">pause</a>();</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    </div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_j_q6500___serial.html#a1479a28386d265ad160b4638b60f4b52">next</a>();</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_j_q6500___serial.html#a0a0c4dd1b805fd1799395e01cf022da9">prev</a>();</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_j_q6500___serial.html#a0a933e15d95030635f97fd30bb1a86c8">nextFolder</a>();</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    </div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_j_q6500___serial.html#ad11c922dfd1b670e394fa57ee6ce4955">prevFolder</a>();</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    </div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_j_q6500___serial.html#aaaa94916df5363cf9d4f843af112688d">playFileByIndexNumber</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> fileNumber);        </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    </div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_j_q6500___serial.html#a355abffc73948ed3929889bc822d17d4">playFileNumberInFolderNumber</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> folderNumber, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> fileNumber);</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    </div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_j_q6500___serial.html#a7af96fb244cf2a75b2a735771ab69b72">volumeUp</a>();</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    </div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_j_q6500___serial.html#a48c715b6ba9ebea42ccd704cff7f0fb3">volumeDn</a>();</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    </div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_j_q6500___serial.html#a5817319d586676bd91b314f722eec699">setVolume</a>(byte volumeFrom0To30);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    </div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_j_q6500___serial.html#ad1d7c2adac6d94e1a5b36195095b4f37">setEqualizer</a>(byte equalizerMode); <span class="comment">// EQ_NORMAL to EQ_BASS</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    </div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_j_q6500___serial.html#a96783219caa0d849f6e48540f312fd20">setLoopMode</a>(byte loopMode);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    </div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_j_q6500___serial.html#af730b77807371203d79bc2824f69986b">setSource</a>(byte source);        <span class="comment">// SRC_BUILTIN or SRC_SDCARD       </span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    </div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_j_q6500___serial.html#a2637fb1a98af48facc7bd0854e512d17">sleep</a>();</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    </div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_j_q6500___serial.html#a656a4a915ca0ca29ef6d6cb3311efa42">reset</a>();</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    </div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="comment">// Status querying commands</span></div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;<span class="comment"></span>    byte <a class="code" href="class_j_q6500___serial.html#a26a539cd68ac3b0ce35c8af9dd68d2cb">getStatus</a>();</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    </div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    byte <a class="code" href="class_j_q6500___serial.html#a43c75b0c11ec1fcc1f81173cb0fa2fc4">getVolume</a>();</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    </div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    byte <a class="code" href="class_j_q6500___serial.html#a8434bee28c17f1416d52b47233b7b02d">getEqualizer</a>();</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    </div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    byte <a class="code" href="class_j_q6500___serial.html#a664cf9ead4482b9b8aa1f624a9946fb0">getLoopMode</a>();</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    </div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>   <a class="code" href="class_j_q6500___serial.html#a7435b371bce3ee270578e1b67b992541">countFiles</a>(byte source);    </div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    </div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>   <a class="code" href="class_j_q6500___serial.html#a4752f08b33ec78305812e0251e7ecfcc">countFolders</a>(byte source);    </div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    </div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>   <a class="code" href="class_j_q6500___serial.html#a7c56631edbde77192027a027a7dfb108">currentFileIndexNumber</a>(byte source);</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160; </div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>   <a class="code" href="class_j_q6500___serial.html#ad954738247ecb0117f0aab66e6409d24">currentFilePositionInSeconds</a>();</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    </div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>   <a class="code" href="class_j_q6500___serial.html#abc63d2b3f4902c563839cf0c6ba3e8f2">currentFileLengthInSeconds</a>();</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    </div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    <span class="keywordtype">void</span>           <a class="code" href="class_j_q6500___serial.html#a42d8644021cd216f1fe5bd69ad161f1f">currentFileName</a>(<span class="keywordtype">char</span> *buffer, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> bufferLength);    </div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        </div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    </div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;  <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    </div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_j_q6500___serial.html#a60b3b91b08c27b4a99d8cc790b9b7258">sendCommand</a>(byte command, byte arg1, byte arg2, <span class="keywordtype">char</span> *responseBuffer, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> bufferLength);</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    <span class="comment">// Just some different versions of that for ease of use</span></div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_j_q6500___serial.html#a60b3b91b08c27b4a99d8cc790b9b7258">sendCommand</a>(byte command);    </div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_j_q6500___serial.html#a60b3b91b08c27b4a99d8cc790b9b7258">sendCommand</a>(byte command, byte arg1);    </div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_j_q6500___serial.html#a60b3b91b08c27b4a99d8cc790b9b7258">sendCommand</a>(byte command, byte arg1, byte arg2);</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    </div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_j_q6500___serial.html#a9620925f5e42c30586b6ed8300372781">sendCommandWithUnsignedIntResponse</a>(byte command);</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    <span class="comment">// This seems not that useful since there only seems to be a version 1 anway :/</span></div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> getVersion();</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    </div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    <span class="keywordtype">int</span>    waitUntilAvailable(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> maxWaitTime = 1000);</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    </div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    Stream *_serial;</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    </div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> uint8_t MP3_CMD_BEGIN = 0x7E;</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> uint8_t MP3_CMD_END   = 0xEF;</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    </div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> uint8_t MP3_CMD_PLAY = 0x0D;</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> uint8_t MP3_CMD_PAUSE = 0x0E;</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> uint8_t MP3_CMD_NEXT = 0x01;</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> uint8_t MP3_CMD_PREV = 0x02;</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> uint8_t MP3_CMD_PLAY_IDX = 0x03;</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    </div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> uint8_t MP3_CMD_NEXT_FOLDER = 0x0F;</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> uint8_t MP3_CMD_PREV_FOLDER = 0x0F; <span class="comment">// Note the same as next, the data byte indicates direction</span></div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    </div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> uint8_t MP3_CMD_PLAY_FILE_FOLDER = 0x12;</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    </div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> uint8_t MP3_CMD_VOL_UP = 0x04;</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> uint8_t MP3_CMD_VOL_DN = 0x05;</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> uint8_t MP3_CMD_VOL_SET = 0x06;</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    </div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> uint8_t MP3_CMD_EQ_SET = 0x07;</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> uint8_t MP3_CMD_LOOP_SET = 0x11;    </div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> uint8_t MP3_CMD_SOURCE_SET = 0x09;</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> uint8_t MP3_CMD_SLEEP = 0x0A;    </div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> uint8_t MP3_CMD_RESET = 0x0C;</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    </div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> uint8_t MP3_CMD_STATUS = 0x42;</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> uint8_t MP3_CMD_VOL_GET = 0x43;</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> uint8_t MP3_CMD_EQ_GET = 0x44;</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> uint8_t MP3_CMD_LOOP_GET = 0x45;</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> uint8_t MP3_CMD_VER_GET = 0x46;</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;    </div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> uint8_t MP3_CMD_COUNT_SD  = 0x47;</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> uint8_t MP3_CMD_COUNT_MEM = 0x49;</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> uint8_t MP3_CMD_COUNT_FOLDERS = 0x53;</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> uint8_t MP3_CMD_CURRENT_FILE_IDX_SD = 0x4B;</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> uint8_t MP3_CMD_CURRENT_FILE_IDX_MEM = 0x4D;</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    </div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> uint8_t MP3_CMD_CURRENT_FILE_POS_SEC = 0x50;</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> uint8_t MP3_CMD_CURRENT_FILE_LEN_SEC = 0x51;</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> uint8_t MP3_CMD_CURRENT_FILE_NAME = 0x52;</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;    </div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;};</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="class_j_q6500___serial_html_a0a933e15d95030635f97fd30bb1a86c8"><div class="ttname"><a href="class_j_q6500___serial.html#a0a933e15d95030635f97fd30bb1a86c8">JQ6500_Serial::nextFolder</a></div><div class="ttdeci">void nextFolder()</div><div class="ttdoc">Play the next folder. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:68</div></div>
+<div class="ttc" id="class_j_q6500___serial_html_a9620925f5e42c30586b6ed8300372781"><div class="ttname"><a href="class_j_q6500___serial.html#a9620925f5e42c30586b6ed8300372781">JQ6500_Serial::sendCommandWithUnsignedIntResponse</a></div><div class="ttdeci">unsigned int sendCommandWithUnsignedIntResponse(byte command)</div><div class="ttdoc">Send a command to the JQ6500 module, and get a response. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:197</div></div>
+<div class="ttc" id="class_j_q6500___serial_html_a355abffc73948ed3929889bc822d17d4"><div class="ttname"><a href="class_j_q6500___serial.html#a355abffc73948ed3929889bc822d17d4">JQ6500_Serial::playFileNumberInFolderNumber</a></div><div class="ttdeci">void playFileNumberInFolderNumber(unsigned int folderNumber, unsigned int fileNumber)</div><div class="ttdoc">Play a specific file in a specific folder based on the name of those folder and file. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:78</div></div>
+<div class="ttc" id="class_j_q6500___serial_html_a60b3b91b08c27b4a99d8cc790b9b7258"><div class="ttname"><a href="class_j_q6500___serial.html#a60b3b91b08c27b4a99d8cc790b9b7258">JQ6500_Serial::sendCommand</a></div><div class="ttdeci">void sendCommand(byte command, byte arg1, byte arg2, char *responseBuffer, unsigned int bufferLength)</div><div class="ttdoc">Send a command to the JQ6500 module,. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:219</div></div>
+<div class="ttc" id="class_j_q6500___serial_html_a5817319d586676bd91b314f722eec699"><div class="ttname"><a href="class_j_q6500___serial.html#a5817319d586676bd91b314f722eec699">JQ6500_Serial::setVolume</a></div><div class="ttdeci">void setVolume(byte volumeFrom0To30)</div><div class="ttdoc">Set the volume to a specific level (0 to 30). </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:93</div></div>
+<div class="ttc" id="class_j_q6500___serial_html_ad6265593f16bb2268e64938de5e4d881"><div class="ttname"><a href="class_j_q6500___serial.html#ad6265593f16bb2268e64938de5e4d881">JQ6500_Serial::pause</a></div><div class="ttdeci">void pause()</div><div class="ttdoc">Pause the current file. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:48</div></div>
+<div class="ttc" id="class_j_q6500___serial_html_a656a4a915ca0ca29ef6d6cb3311efa42"><div class="ttname"><a href="class_j_q6500___serial.html#a656a4a915ca0ca29ef6d6cb3311efa42">JQ6500_Serial::reset</a></div><div class="ttdeci">void reset()</div><div class="ttdoc">Reset the device (softly). </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:118</div></div>
+<div class="ttc" id="class_j_q6500___serial_html_a48c715b6ba9ebea42ccd704cff7f0fb3"><div class="ttname"><a href="class_j_q6500___serial.html#a48c715b6ba9ebea42ccd704cff7f0fb3">JQ6500_Serial::volumeDn</a></div><div class="ttdeci">void volumeDn()</div><div class="ttdoc">Decrease the volume by 1 (volume ranges 0 to 30). </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:88</div></div>
+<div class="ttc" id="class_j_q6500___serial_html_abc63d2b3f4902c563839cf0c6ba3e8f2"><div class="ttname"><a href="class_j_q6500___serial.html#abc63d2b3f4902c563839cf0c6ba3e8f2">JQ6500_Serial::currentFileLengthInSeconds</a></div><div class="ttdeci">unsigned int currentFileLengthInSeconds()</div><div class="ttdoc">For the currently playing or paused file, return the total length of the file in seconds. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:188</div></div>
+<div class="ttc" id="class_j_q6500___serial_html_a4752f08b33ec78305812e0251e7ecfcc"><div class="ttname"><a href="class_j_q6500___serial.html#a4752f08b33ec78305812e0251e7ecfcc">JQ6500_Serial::countFolders</a></div><div class="ttdeci">unsigned int countFolders(byte source)</div><div class="ttdoc">Count the number of folders on the specified media. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:163</div></div>
+<div class="ttc" id="class_j_q6500___serial_html_ae3fbb860a8c7e061bdcc16c06e20547f"><div class="ttname"><a href="class_j_q6500___serial.html#ae3fbb860a8c7e061bdcc16c06e20547f">JQ6500_Serial::play</a></div><div class="ttdeci">void play()</div><div class="ttdoc">Start playing the current file. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:33</div></div>
+<div class="ttc" id="class_j_q6500___serial_html_a664cf9ead4482b9b8aa1f624a9946fb0"><div class="ttname"><a href="class_j_q6500___serial.html#a664cf9ead4482b9b8aa1f624a9946fb0">JQ6500_Serial::getLoopMode</a></div><div class="ttdeci">byte getLoopMode()</div><div class="ttdoc">Get loop mode. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:146</div></div>
+<div class="ttc" id="class_j_q6500___serial_html_ad1d7c2adac6d94e1a5b36195095b4f37"><div class="ttname"><a href="class_j_q6500___serial.html#ad1d7c2adac6d94e1a5b36195095b4f37">JQ6500_Serial::setEqualizer</a></div><div class="ttdeci">void setEqualizer(byte equalizerMode)</div><div class="ttdoc">Set the equalizer to one of 6 preset modes. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:98</div></div>
+<div class="ttc" id="class_j_q6500___serial_html_a80a2ef4fbb20aa984eca0ddb03328718"><div class="ttname"><a href="class_j_q6500___serial.html#a80a2ef4fbb20aa984eca0ddb03328718">JQ6500_Serial::restart</a></div><div class="ttdeci">void restart()</div><div class="ttdoc">Restart the current (possibly paused) track from the beginning. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:38</div></div>
+<div class="ttc" id="class_j_q6500___serial_html_a9e998be9967b448b672ef90b9b689d76"><div class="ttname"><a href="class_j_q6500___serial.html#a9e998be9967b448b672ef90b9b689d76">JQ6500_Serial::JQ6500_Serial</a></div><div class="ttdeci">JQ6500_Serial(Stream *dev)</div><div class="ttdoc">Create JQ6500 object. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.h:111</div></div>
+<div class="ttc" id="class_j_q6500___serial_html_a8434bee28c17f1416d52b47233b7b02d"><div class="ttname"><a href="class_j_q6500___serial.html#a8434bee28c17f1416d52b47233b7b02d">JQ6500_Serial::getEqualizer</a></div><div class="ttdeci">byte getEqualizer()</div><div class="ttdoc">Get the equalizer mode. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:145</div></div>
+<div class="ttc" id="class_j_q6500___serial_html_a1479a28386d265ad160b4638b60f4b52"><div class="ttname"><a href="class_j_q6500___serial.html#a1479a28386d265ad160b4638b60f4b52">JQ6500_Serial::next</a></div><div class="ttdeci">void next()</div><div class="ttdoc">Play the next file. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:53</div></div>
+<div class="ttc" id="class_j_q6500___serial_html_a42d8644021cd216f1fe5bd69ad161f1f"><div class="ttname"><a href="class_j_q6500___serial.html#a42d8644021cd216f1fe5bd69ad161f1f">JQ6500_Serial::currentFileName</a></div><div class="ttdeci">void currentFileName(char *buffer, unsigned int bufferLength)</div><div class="ttdoc">Get the name of the "current" file on the SD Card. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:190</div></div>
+<div class="ttc" id="class_j_q6500___serial_html_a43c75b0c11ec1fcc1f81173cb0fa2fc4"><div class="ttname"><a href="class_j_q6500___serial.html#a43c75b0c11ec1fcc1f81173cb0fa2fc4">JQ6500_Serial::getVolume</a></div><div class="ttdeci">byte getVolume()</div><div class="ttdoc">Get the current volume level. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:144</div></div>
+<div class="ttc" id="class_j_q6500___serial_html_a7af96fb244cf2a75b2a735771ab69b72"><div class="ttname"><a href="class_j_q6500___serial.html#a7af96fb244cf2a75b2a735771ab69b72">JQ6500_Serial::volumeUp</a></div><div class="ttdeci">void volumeUp()</div><div class="ttdoc">Increase the volume by 1 (volume ranges 0 to 30). </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:83</div></div>
+<div class="ttc" id="class_j_q6500___serial_html_a7c56631edbde77192027a027a7dfb108"><div class="ttname"><a href="class_j_q6500___serial.html#a7c56631edbde77192027a027a7dfb108">JQ6500_Serial::currentFileIndexNumber</a></div><div class="ttdeci">unsigned int currentFileIndexNumber(byte source)</div><div class="ttdoc">For the currently playing (or paused, or file that would be played next if stopped) file...</div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:173</div></div>
+<div class="ttc" id="class_j_q6500___serial_html_ad954738247ecb0117f0aab66e6409d24"><div class="ttname"><a href="class_j_q6500___serial.html#ad954738247ecb0117f0aab66e6409d24">JQ6500_Serial::currentFilePositionInSeconds</a></div><div class="ttdeci">unsigned int currentFilePositionInSeconds()</div><div class="ttdoc">For the currently playing or paused file, return the current position in seconds. ...</div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:187</div></div>
+<div class="ttc" id="class_j_q6500___serial_html_a7435b371bce3ee270578e1b67b992541"><div class="ttname"><a href="class_j_q6500___serial.html#a7435b371bce3ee270578e1b67b992541">JQ6500_Serial::countFiles</a></div><div class="ttdeci">unsigned int countFiles(byte source)</div><div class="ttdoc">Count the number of files on the specified media. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:149</div></div>
+<div class="ttc" id="class_j_q6500___serial_html"><div class="ttname"><a href="class_j_q6500___serial.html">JQ6500_Serial</a></div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.h:79</div></div>
+<div class="ttc" id="class_j_q6500___serial_html_a96783219caa0d849f6e48540f312fd20"><div class="ttname"><a href="class_j_q6500___serial.html#a96783219caa0d849f6e48540f312fd20">JQ6500_Serial::setLoopMode</a></div><div class="ttdeci">void setLoopMode(byte loopMode)</div><div class="ttdoc">Set the looping mode. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:103</div></div>
+<div class="ttc" id="class_j_q6500___serial_html_a0a0c4dd1b805fd1799395e01cf022da9"><div class="ttname"><a href="class_j_q6500___serial.html#a0a0c4dd1b805fd1799395e01cf022da9">JQ6500_Serial::prev</a></div><div class="ttdeci">void prev()</div><div class="ttdoc">Play the previous file. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:58</div></div>
+<div class="ttc" id="class_j_q6500___serial_html_a26a539cd68ac3b0ce35c8af9dd68d2cb"><div class="ttname"><a href="class_j_q6500___serial.html#a26a539cd68ac3b0ce35c8af9dd68d2cb">JQ6500_Serial::getStatus</a></div><div class="ttdeci">byte getStatus()</div><div class="ttdoc">Get the status from the device. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:125</div></div>
+<div class="ttc" id="class_j_q6500___serial_html_ad11c922dfd1b670e394fa57ee6ce4955"><div class="ttname"><a href="class_j_q6500___serial.html#ad11c922dfd1b670e394fa57ee6ce4955">JQ6500_Serial::prevFolder</a></div><div class="ttdeci">void prevFolder()</div><div class="ttdoc">Play the previous folder. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:73</div></div>
+<div class="ttc" id="class_j_q6500___serial_html_af730b77807371203d79bc2824f69986b"><div class="ttname"><a href="class_j_q6500___serial.html#af730b77807371203d79bc2824f69986b">JQ6500_Serial::setSource</a></div><div class="ttdeci">void setSource(byte source)</div><div class="ttdoc">Set the source to read mp3 data from. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:108</div></div>
+<div class="ttc" id="class_j_q6500___serial_html_aaaa94916df5363cf9d4f843af112688d"><div class="ttname"><a href="class_j_q6500___serial.html#aaaa94916df5363cf9d4f843af112688d">JQ6500_Serial::playFileByIndexNumber</a></div><div class="ttdeci">void playFileByIndexNumber(unsigned int fileNumber)</div><div class="ttdoc">Play a specific file based on it&#39;s (FAT table) index number. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:63</div></div>
+<div class="ttc" id="class_j_q6500___serial_html_a2637fb1a98af48facc7bd0854e512d17"><div class="ttname"><a href="class_j_q6500___serial.html#a2637fb1a98af48facc7bd0854e512d17">JQ6500_Serial::sleep</a></div><div class="ttdeci">void sleep()</div><div class="ttdoc">Put the device to sleep. </div><div class="ttdef"><b>Definition:</b> JQ6500_Serial.cpp:113</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="_j_q6500___serial_8h.html">JQ6500_Serial.h</a></li>
-    <li class="footer">Generated on Sat Apr 27 2019 11:06:03 for JQ6500 MP3 Player Arduino Library by
+    <li class="footer">Generated on Wed Jun 2 2021 15:28:06 for JQ6500 MP3 Player Arduino Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

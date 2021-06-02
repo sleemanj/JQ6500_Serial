@@ -71,7 +71,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -108,19 +107,22 @@ $(document).ready(function(){initNavTree('class_j_q6500___serial.html','');});
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pro-static-attribs">Static Protected Attributes</a> &#124;
 <a href="class_j_q6500___serial-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">JQ6500_Serial Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>Inherits SoftwareSerial.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a37e8e9d6d1eeb5f77efa42a4fdb510d0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_j_q6500___serial.html#a37e8e9d6d1eeb5f77efa42a4fdb510d0">JQ6500_Serial</a> (short rxPin, short txPin)</td></tr>
-<tr class="memdesc:a37e8e9d6d1eeb5f77efa42a4fdb510d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create JQ6500 object.  <a href="#a37e8e9d6d1eeb5f77efa42a4fdb510d0">More...</a><br /></td></tr>
-<tr class="separator:a37e8e9d6d1eeb5f77efa42a4fdb510d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e998be9967b448b672ef90b9b689d76"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_j_q6500___serial.html#a9e998be9967b448b672ef90b9b689d76">JQ6500_Serial</a> (Stream *dev)</td></tr>
+<tr class="memdesc:a9e998be9967b448b672ef90b9b689d76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create JQ6500 object.  <a href="#a9e998be9967b448b672ef90b9b689d76">More...</a><br /></td></tr>
+<tr class="separator:a9e998be9967b448b672ef90b9b689d76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ab8648e9f732fc7b060b0cdf6624d79"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5ab8648e9f732fc7b060b0cdf6624d79"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>JQ6500_Serial</b> (Stream &amp;dev)</td></tr>
+<tr class="separator:a5ab8648e9f732fc7b060b0cdf6624d79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3fbb860a8c7e061bdcc16c06e20547f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae3fbb860a8c7e061bdcc16c06e20547f"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_j_q6500___serial.html#ae3fbb860a8c7e061bdcc16c06e20547f">play</a> ()</td></tr>
 <tr class="memdesc:ae3fbb860a8c7e061bdcc16c06e20547f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start playing the current file. <br /></td></tr>
@@ -228,15 +230,114 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>sendCommand</b> (byte
 <tr class="memitem:a94b614522f28f66b2822ec03165441a5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a94b614522f28f66b2822ec03165441a5"></a>
 unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>getVersion</b> ()</td></tr>
 <tr class="separator:a94b614522f28f66b2822ec03165441a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33d24d803e8dc93368d570d3f44a0951"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a33d24d803e8dc93368d570d3f44a0951"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>readBytesUntilAndIncluding</b> (char terminator, char *buffer, size_t length, byte maxOneLineOnly=0)</td></tr>
-<tr class="separator:a33d24d803e8dc93368d570d3f44a0951"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ac75360b8e52af22b4316fdb243a0bf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3ac75360b8e52af22b4316fdb243a0bf"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>waitUntilAvailable</b> (unsigned long maxWaitTime=1000)</td></tr>
 <tr class="separator:a3ac75360b8e52af22b4316fdb243a0bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a8a108f691e4fb1973156b6a8353b5775"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8a108f691e4fb1973156b6a8353b5775"></a>
+Stream *&#160;</td><td class="memItemRight" valign="bottom"><b>_serial</b></td></tr>
+<tr class="separator:a8a108f691e4fb1973156b6a8353b5775"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-attribs"></a>
+Static Protected Attributes</h2></td></tr>
+<tr class="memitem:a1e2250171f9043e9f4db745a4f3945c9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1e2250171f9043e9f4db745a4f3945c9"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>MP3_CMD_BEGIN</b> = 0x7E</td></tr>
+<tr class="separator:a1e2250171f9043e9f4db745a4f3945c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2607cebf28c853177740e7b100c8f57"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac2607cebf28c853177740e7b100c8f57"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>MP3_CMD_END</b> = 0xEF</td></tr>
+<tr class="separator:ac2607cebf28c853177740e7b100c8f57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fd64a53e5ec7574a5cdaa3152754831"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7fd64a53e5ec7574a5cdaa3152754831"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>MP3_CMD_PLAY</b> = 0x0D</td></tr>
+<tr class="separator:a7fd64a53e5ec7574a5cdaa3152754831"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab14802eddefc996591326dd4c6a6b09f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab14802eddefc996591326dd4c6a6b09f"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>MP3_CMD_PAUSE</b> = 0x0E</td></tr>
+<tr class="separator:ab14802eddefc996591326dd4c6a6b09f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf9b86b7909e9fb66d0e1abe6d8ea74d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaf9b86b7909e9fb66d0e1abe6d8ea74d"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>MP3_CMD_NEXT</b> = 0x01</td></tr>
+<tr class="separator:aaf9b86b7909e9fb66d0e1abe6d8ea74d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5a67af5b08ae556467686d1a6562250"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac5a67af5b08ae556467686d1a6562250"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>MP3_CMD_PREV</b> = 0x02</td></tr>
+<tr class="separator:ac5a67af5b08ae556467686d1a6562250"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add4aca311816ab85e50fb6ca7a41e12a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="add4aca311816ab85e50fb6ca7a41e12a"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>MP3_CMD_PLAY_IDX</b> = 0x03</td></tr>
+<tr class="separator:add4aca311816ab85e50fb6ca7a41e12a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ddef14a8231e63005a3f0460e43f38b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2ddef14a8231e63005a3f0460e43f38b"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>MP3_CMD_NEXT_FOLDER</b> = 0x0F</td></tr>
+<tr class="separator:a2ddef14a8231e63005a3f0460e43f38b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ba5450300eed5407ca1e86eba11240e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3ba5450300eed5407ca1e86eba11240e"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>MP3_CMD_PREV_FOLDER</b> = 0x0F</td></tr>
+<tr class="separator:a3ba5450300eed5407ca1e86eba11240e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01e14aa8749928eed65d898e26c44a4c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a01e14aa8749928eed65d898e26c44a4c"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>MP3_CMD_PLAY_FILE_FOLDER</b> = 0x12</td></tr>
+<tr class="separator:a01e14aa8749928eed65d898e26c44a4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4250a3be720824fd860df7dcf925b762"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4250a3be720824fd860df7dcf925b762"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>MP3_CMD_VOL_UP</b> = 0x04</td></tr>
+<tr class="separator:a4250a3be720824fd860df7dcf925b762"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9a3a3f38935778faefa6dccd970a212"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa9a3a3f38935778faefa6dccd970a212"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>MP3_CMD_VOL_DN</b> = 0x05</td></tr>
+<tr class="separator:aa9a3a3f38935778faefa6dccd970a212"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01a215d20aa18f4e92ba09b41960dcb3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a01a215d20aa18f4e92ba09b41960dcb3"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>MP3_CMD_VOL_SET</b> = 0x06</td></tr>
+<tr class="separator:a01a215d20aa18f4e92ba09b41960dcb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02aa55ab90e725a1200e12a473ebbd59"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a02aa55ab90e725a1200e12a473ebbd59"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>MP3_CMD_EQ_SET</b> = 0x07</td></tr>
+<tr class="separator:a02aa55ab90e725a1200e12a473ebbd59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf9d3e2ff81b88ccc629f1334fb403be"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abf9d3e2ff81b88ccc629f1334fb403be"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>MP3_CMD_LOOP_SET</b> = 0x11</td></tr>
+<tr class="separator:abf9d3e2ff81b88ccc629f1334fb403be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43030695d5575c3d607a0ee788d202d4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a43030695d5575c3d607a0ee788d202d4"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>MP3_CMD_SOURCE_SET</b> = 0x09</td></tr>
+<tr class="separator:a43030695d5575c3d607a0ee788d202d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4d60c8fef315686ac692bd2614e8236"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa4d60c8fef315686ac692bd2614e8236"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>MP3_CMD_SLEEP</b> = 0x0A</td></tr>
+<tr class="separator:aa4d60c8fef315686ac692bd2614e8236"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a790a7e6a58f16a7f6aa3b06c108d814e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a790a7e6a58f16a7f6aa3b06c108d814e"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>MP3_CMD_RESET</b> = 0x0C</td></tr>
+<tr class="separator:a790a7e6a58f16a7f6aa3b06c108d814e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1f002644f4d0ea33e426afc291b4d91"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac1f002644f4d0ea33e426afc291b4d91"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>MP3_CMD_STATUS</b> = 0x42</td></tr>
+<tr class="separator:ac1f002644f4d0ea33e426afc291b4d91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08c6cf9124251a02ffd6b997e2203598"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a08c6cf9124251a02ffd6b997e2203598"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>MP3_CMD_VOL_GET</b> = 0x43</td></tr>
+<tr class="separator:a08c6cf9124251a02ffd6b997e2203598"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cf005a68228c840ccbf144fc2e8d40c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0cf005a68228c840ccbf144fc2e8d40c"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>MP3_CMD_EQ_GET</b> = 0x44</td></tr>
+<tr class="separator:a0cf005a68228c840ccbf144fc2e8d40c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba493dd6675615908faeff9ce638b849"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aba493dd6675615908faeff9ce638b849"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>MP3_CMD_LOOP_GET</b> = 0x45</td></tr>
+<tr class="separator:aba493dd6675615908faeff9ce638b849"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f80663b8451a5d92670a64286a74a26"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5f80663b8451a5d92670a64286a74a26"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>MP3_CMD_VER_GET</b> = 0x46</td></tr>
+<tr class="separator:a5f80663b8451a5d92670a64286a74a26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd14c335ae8f213304a54048de739e6a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afd14c335ae8f213304a54048de739e6a"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>MP3_CMD_COUNT_SD</b> = 0x47</td></tr>
+<tr class="separator:afd14c335ae8f213304a54048de739e6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab50c485b7c185c09c38b54f857892559"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab50c485b7c185c09c38b54f857892559"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>MP3_CMD_COUNT_MEM</b> = 0x49</td></tr>
+<tr class="separator:ab50c485b7c185c09c38b54f857892559"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78e6efc98decd19e694be9207f937c00"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a78e6efc98decd19e694be9207f937c00"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>MP3_CMD_COUNT_FOLDERS</b> = 0x53</td></tr>
+<tr class="separator:a78e6efc98decd19e694be9207f937c00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59892555aa6ce35262bc18aa334ffa06"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a59892555aa6ce35262bc18aa334ffa06"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>MP3_CMD_CURRENT_FILE_IDX_SD</b> = 0x4B</td></tr>
+<tr class="separator:a59892555aa6ce35262bc18aa334ffa06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa68ccfc4c10d5373f9b3fd0ddea4cba6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa68ccfc4c10d5373f9b3fd0ddea4cba6"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>MP3_CMD_CURRENT_FILE_IDX_MEM</b> = 0x4D</td></tr>
+<tr class="separator:aa68ccfc4c10d5373f9b3fd0ddea4cba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b33ac8cb2d88b23b89c61272628c353"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0b33ac8cb2d88b23b89c61272628c353"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>MP3_CMD_CURRENT_FILE_POS_SEC</b> = 0x50</td></tr>
+<tr class="separator:a0b33ac8cb2d88b23b89c61272628c353"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd5e038ae8801ac35405317bb562a975"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abd5e038ae8801ac35405317bb562a975"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>MP3_CMD_CURRENT_FILE_LEN_SEC</b> = 0x51</td></tr>
+<tr class="separator:abd5e038ae8801ac35405317bb562a975"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6a134d5b2c5f09508311603c859681b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab6a134d5b2c5f09508311603c859681b"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>MP3_CMD_CURRENT_FILE_NAME</b> = 0x52</td></tr>
+<tr class="separator:ab6a134d5b2c5f09508311603c859681b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a37e8e9d6d1eeb5f77efa42a4fdb510d0"></a>
+<a class="anchor" id="a9e998be9967b448b672ef90b9b689d76"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -246,19 +347,9 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>waitUntilAvailable</b>
         <tr>
           <td class="memname">JQ6500_Serial::JQ6500_Serial </td>
           <td>(</td>
-          <td class="paramtype">short&#160;</td>
-          <td class="paramname"><em>rxPin</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">Stream *&#160;</td>
+          <td class="paramname"><em>dev</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">short&#160;</td>
-          <td class="paramname"><em>txPin</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -897,8 +988,8 @@ mp3.reset();
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/bigdrive/home/boffin/Arduino-1.6/libraries/JQ6500_Serial/src/<a class="el" href="_j_q6500___serial_8h_source.html">JQ6500_Serial.h</a></li>
-<li>/bigdrive/home/boffin/Arduino-1.6/libraries/JQ6500_Serial/src/<a class="el" href="_j_q6500___serial_8cpp.html">JQ6500_Serial.cpp</a></li>
+<li>C:/Users/luca/documents/GitHub/JQ6500_Serial/src/<a class="el" href="_j_q6500___serial_8h_source.html">JQ6500_Serial.h</a></li>
+<li>C:/Users/luca/documents/GitHub/JQ6500_Serial/src/<a class="el" href="_j_q6500___serial_8cpp.html">JQ6500_Serial.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -906,7 +997,7 @@ mp3.reset();
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_j_q6500___serial.html">JQ6500_Serial</a></li>
-    <li class="footer">Generated on Sat Apr 27 2019 11:06:04 for JQ6500 MP3 Player Arduino Library by
+    <li class="footer">Generated on Wed Jun 2 2021 15:28:06 for JQ6500 MP3 Player Arduino Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

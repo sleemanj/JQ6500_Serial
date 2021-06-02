@@ -1,6 +1,7 @@
 var class_j_q6500___serial =
 [
-    [ "JQ6500_Serial", "class_j_q6500___serial.html#a37e8e9d6d1eeb5f77efa42a4fdb510d0", null ],
+    [ "JQ6500_Serial", "class_j_q6500___serial.html#a9e998be9967b448b672ef90b9b689d76", null ],
+    [ "JQ6500_Serial", "class_j_q6500___serial.html#a5ab8648e9f732fc7b060b0cdf6624d79", null ],
     [ "countFiles", "class_j_q6500___serial.html#a7435b371bce3ee270578e1b67b992541", null ],
     [ "countFolders", "class_j_q6500___serial.html#a4752f08b33ec78305812e0251e7ecfcc", null ],
     [ "currentFileIndexNumber", "class_j_q6500___serial.html#a7c56631edbde77192027a027a7dfb108", null ],
@@ -20,7 +21,6 @@ var class_j_q6500___serial =
     [ "playFileNumberInFolderNumber", "class_j_q6500___serial.html#a355abffc73948ed3929889bc822d17d4", null ],
     [ "prev", "class_j_q6500___serial.html#a0a0c4dd1b805fd1799395e01cf022da9", null ],
     [ "prevFolder", "class_j_q6500___serial.html#ad11c922dfd1b670e394fa57ee6ce4955", null ],
-    [ "readBytesUntilAndIncluding", "class_j_q6500___serial.html#a33d24d803e8dc93368d570d3f44a0951", null ],
     [ "reset", "class_j_q6500___serial.html#a656a4a915ca0ca29ef6d6cb3311efa42", null ],
     [ "restart", "class_j_q6500___serial.html#a80a2ef4fbb20aa984eca0ddb03328718", null ],
     [ "sendCommand", "class_j_q6500___serial.html#a60b3b91b08c27b4a99d8cc790b9b7258", null ],
@@ -35,5 +35,6 @@ var class_j_q6500___serial =
     [ "sleep", "class_j_q6500___serial.html#a2637fb1a98af48facc7bd0854e512d17", null ],
     [ "volumeDn", "class_j_q6500___serial.html#a48c715b6ba9ebea42ccd704cff7f0fb3", null ],
     [ "volumeUp", "class_j_q6500___serial.html#a7af96fb244cf2a75b2a735771ab69b72", null ],
-    [ "waitUntilAvailable", "class_j_q6500___serial.html#a3ac75360b8e52af22b4316fdb243a0bf", null ]
+    [ "waitUntilAvailable", "class_j_q6500___serial.html#a3ac75360b8e52af22b4316fdb243a0bf", null ],
+    [ "_serial", "class_j_q6500___serial.html#a8a108f691e4fb1973156b6a8353b5775", null ]
 ];
