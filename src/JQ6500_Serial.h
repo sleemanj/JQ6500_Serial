@@ -108,7 +108,6 @@ class JQ6500_Serial
      * and all the other commands :-)
      */
     
-    JQ6500_Serial(short rxPin, short txPin) { };
     JQ6500_Serial(Stream *dev) : _serial(dev) {}
     JQ6500_Serial(Stream &dev) : _serial(&dev) {}
 		
