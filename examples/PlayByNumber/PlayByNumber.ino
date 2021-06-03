@@ -13,7 +13,7 @@
 // Arduino Pin TX is connected to one end of a  1k resistor, 
 // the other end of the 1k resistor is connected to RX of the JQ6500
 // If your Arduino is 3v3 powered, you can omit the 1k series resistor
-JQ6500_Serial mp3(&Serial);
+JQ6500_Serial mp3(Serial);
 
 void setup() {
   Serial.begin(9600);

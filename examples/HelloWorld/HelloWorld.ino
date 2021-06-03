@@ -19,7 +19,7 @@
 //   If your Arduino is 3v3 powered, you can omit the 1k series resistor
 
 SoftwareSerial mySerial(8, 9);
-JQ6500_Serial mp3(&mySerial);
+JQ6500_Serial mp3(mySerial);
 
 void setup() {
   
