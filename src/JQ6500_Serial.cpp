@@ -28,7 +28,6 @@
 
 #include <Arduino.h>
 #include "JQ6500_Serial.h"
-#include <SoftwareSerial.h>
 
 
 void  JQ6500_Serial::play()
@@ -252,14 +251,14 @@ void  JQ6500_Serial::reset()
       
       // The device appears to send some sort of status information (namely "STOP" when it stops playing)
       // just discard this right before we send the command
-      while(this->waitUntilAvailable(10)) this->read();
+      while(this->waitUntilAvailable(10)) _serial->read();
       
-      this->write((byte)MP3_CMD_BEGIN);
-      this->write(2+args);
-      this->write(command);
-      if(args>=1) this->write(arg1);
-      if(args==2) this->write(arg2);
-      this->write((byte)MP3_CMD_END);
+      _serial->write((byte)MP3_CMD_BEGIN);
+      _serial->write(2+args);
+      _serial->write(command);
+      if(args>=1) _serial->write(arg1);
+      if(args==2) _serial->write(arg2);
+      _serial->write((byte)MP3_CMD_END);
       
       
       unsigned int i = 0;
@@ -280,7 +279,7 @@ void  JQ6500_Serial::reset()
       
       while(this->waitUntilAvailable(150))
       {
-        j = (char)this->read();
+        j = (char)_serial->read();
         
 #if MP3_DEBUG
         Serial.print(j);
@@ -298,26 +297,6 @@ void  JQ6500_Serial::reset()
       
     }
     
-    
-// as readBytes with terminator character
-// terminates if length characters have been read, timeout, or if the terminator character  detected
-// returns the number of characters placed in the buffer (0 means no valid data found)
-
-size_t JQ6500_Serial::readBytesUntilAndIncluding(char terminator, char *buffer, size_t length, byte maxOneLineOnly)
-{
-    if (length < 1) return 0;
-  size_t index = 0;
-  while (index < length) {
-    int c = timedRead();
-    if (c < 0) break;    
-    *buffer++ = (char)c;
-    index++;
-    if(c == terminator) break;
-    if(maxOneLineOnly && ( c == '\n') ) break;
-  }
-  return index; // return number of characters, not including null terminator
-}
-
 
 // Waits until data becomes available, or a timeout occurs
 int JQ6500_Serial::waitUntilAvailable(unsigned long maxWaitTime)
@@ -326,7 +305,7 @@ int JQ6500_Serial::waitUntilAvailable(unsigned long maxWaitTime)
   int c = 0;
   startTime = millis();
   do {
-    c = this->available();
+    c = _serial->available();
     if (c) break;
   } while(millis() - startTime < maxWaitTime);
   

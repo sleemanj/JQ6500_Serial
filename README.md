@@ -63,4 +63,24 @@ volume if you experience this problem.
 Usage
 --------------------------
 
-Open the HelloWorld example.
+**JQ6500 instance and serial connection**
+
+Define a new instance of JQ6500_Serial, passing the serial connection the module is connected to.
+
+You can use any Serial libraries that implement a *Stream* object, for example:
+
+**Hardware** serial connection (see PlayByNumber example):
+
+    JQ6500_Serial mp3(&Serial);
+    [...]
+    Serial.begin(9600);
+
+**Software** serial connection (see other examples):
+
+    #include <SoftwareSerial.h>
+    SoftwareSerial mySerial(RX_PIN, TX_PIN);
+    JQ6500_Serial mp3(&mySerial);
+    [...]
+    mySerial.begin(9600);
+    
+

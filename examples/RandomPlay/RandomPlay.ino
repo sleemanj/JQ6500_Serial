@@ -14,7 +14,8 @@
 //   Arduino Pin 9 is connected to one end of a  1k resistor, 
 //     the other end of the 1k resistor is connected to RX of the JQ6500
 //   If your Arduino is 3v3 powered, you can omit the 1k series resistor
-JQ6500_Serial mp3(8,9);
+SoftwareSerial mySerial(8, 9);
+JQ6500_Serial mp3(mySerial);
 
 unsigned int numFiles; // Total number of files on media (autodetected in setup())
 byte mediaType;        // Media type (autodetected in setup())
@@ -24,7 +25,7 @@ void setup() {
   Serial.begin(9600);  
   
   // Begin the connection, reset the device, and set volume to a reasonable level
-  mp3.begin(9600);
+  mySerial.begin(9600);
   while(numFiles == 0)
   {
     mp3.reset();  
