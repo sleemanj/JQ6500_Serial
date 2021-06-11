@@ -71,7 +71,7 @@ You can use any Serial libraries that implement a *Stream* object, for example:
 
 **Hardware** serial connection (see PlayByNumber example):
 
-    JQ6500_Serial mp3(&Serial);
+    JQ6500_Serial mp3(Serial);
     [...]
     Serial.begin(9600);
 
@@ -79,7 +79,7 @@ You can use any Serial libraries that implement a *Stream* object, for example:
 
     #include <SoftwareSerial.h>
     SoftwareSerial mySerial(RX_PIN, TX_PIN);
-    JQ6500_Serial mp3(&mySerial);
+    JQ6500_Serial mp3(mySerial);
     [...]
     mySerial.begin(9600);
     
