@@ -4,10 +4,10 @@ JQ6500_Serial
 Simple to use Arduino library to interface to JQ6500 (JQ6500-28P, JQ6500-16P) Mp3 Player Modules
 
 For complete documentation about the JQ6500 Mp3 Player Module, see: 
-   http://sparks.gogo.co.nz/jq6500/index.html
+   https://sparks.gogo.co.nz/jq6500/index.html
    
 For a library methods reference see:
-   https://rawcdn.githack.com/sleemanj/JQ6500_Serial/14187fe1c985fc16bbd99968076b6f24bc4d7c32/docs/html/class_j_q6500___serial.html
+   https://sleemanj.github.io/JQ6500_Serial/html/index.html
 
 For Linux Upload and Windows Upload Repair Tool (JQ6500-16) see:
    https://github.com/NikolaiRadke/JQ6500-rescue-tool
