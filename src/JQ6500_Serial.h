@@ -1,7 +1,7 @@
 /** 
  * Arduino Library for JQ6500 MP3 Module
  * 
- * Copyright (C) 2014 James Sleeman, <http://sparks.gogo.co.nz/jq6500/index.html>
+ * Copyright (C) 2014-2021 James Sleeman, <http://sparks.gogo.co.nz/jq6500/index.html>
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a 
  * copy of this software and associated documentation files (the "Software"), 
@@ -83,9 +83,9 @@ class JQ6500_Serial
 
     /** Create JQ6500 object.
      * 
-     * Example, create global instance:
+     * You can use any Serial libraries that implement a Stream object, for example:
      * 
-     *     JQ6500_Serial mp3(8,9);
+     *     JQ6500_Serial mp3(Serial);
      * 
      * For a 5v Arduino:
      * -----------------
@@ -114,7 +114,6 @@ class JQ6500_Serial
     /** Start playing the current file.
      */
 
-    
     void play();
     
     /** Restart the current (possibly paused) track from the 
@@ -314,7 +313,7 @@ class JQ6500_Serial
      * 
      */
     
-    unsigned int   countFiles(byte source);    
+    unsigned int countFiles(byte source);    
     
     /** Count the number of folders on the specified media.
      * 
@@ -324,7 +323,7 @@ class JQ6500_Serial
      * @return Number of folders present on that media.
      */
     
-    unsigned int   countFolders(byte source);    
+    unsigned int countFolders(byte source);    
     
     /** For the currently playing (or paused, or file that would be played 
      *  next if stopped) file, return the file's (FAT table) index number.
@@ -335,7 +334,7 @@ class JQ6500_Serial
      *  @return Number of file.
      */
     
-    unsigned int   currentFileIndexNumber(byte source);
+    unsigned int currentFileIndexNumber(byte source);
  
     /** For the currently playing or paused file, return the 
      *  current position in seconds.
@@ -343,7 +342,7 @@ class JQ6500_Serial
      * @return Number of seconds into the file currently played.
      * 
      */
-    unsigned int   currentFilePositionInSeconds();
+    unsigned int currentFilePositionInSeconds();
     
     /** For the currently playing or paused file, return the 
      *  total length of the file in seconds.
@@ -351,7 +350,7 @@ class JQ6500_Serial
      * @return Length of audio file in seconds.
      */
     
-    unsigned int   currentFileLengthInSeconds();
+    unsigned int currentFileLengthInSeconds();
     
     /** Get the name of the "current" file on the SD Card.
      *  
@@ -366,7 +365,7 @@ class JQ6500_Serial
      * 
      */
     
-    void           currentFileName(char *buffer, unsigned int bufferLength);    
+    void currentFileName(char *buffer, unsigned int bufferLength);    
         
     
   protected:
@@ -400,7 +399,7 @@ class JQ6500_Serial
     // This seems not that useful since there only seems to be a version 1 anway :/
     unsigned int getVersion();
     
-    int    waitUntilAvailable(unsigned long maxWaitTime = 1000);
+    int waitUntilAvailable(unsigned long maxWaitTime = 1000);
 	
     Stream *_serial;
     
