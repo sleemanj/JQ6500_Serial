@@ -15,7 +15,7 @@ For Linux Upload and Windows Upload Repair Tool (JQ6500-16) see:
 Download, Install and Example
 -----------------------------
 
-* Download: http://sparks.gogo.co.nz/JQ6500_Serial.zip
+* Download: https://sparks.gogo.co.nz/JQ6500_Serial.zip
 * Open the Arduino IDE (1.0.5)
 * Select the menu item Sketch > Import Library > Add Library
 * Choose to install the JQ6500_Serial.zip file you downloaded
